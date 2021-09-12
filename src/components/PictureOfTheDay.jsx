@@ -53,39 +53,40 @@ const Picture = (props) => {
 	};
 
 	return (
-		<Container>
-			<Header as='h2' content={`${title} - ${copyright}`} />
-
-			<Image src={image} alt={title} rounded centered />
-			<Container>
-				<div className='like-photo-btn'>
-					<Button as='div' labelPosition='right'>
-						<Button color={isLiked ? 'red' : 'grey'} onClick={handleClick}>
-							<Icon name='heart' />
-							{isLiked ? 'Liked' : 'Like'}
+		<div className='picture-otd'>
+			<Container className='flex-column'>
+				<Header as='h2' color='red' content={`${title} - ${copyright}`} />
+				<Image src={image} alt={title} rounded centered />
+				<Container>
+					<div className='like-photo-btn'>
+						<Button as='div' labelPosition='right'>
+							<Button color={isLiked ? 'red' : 'grey'} onClick={handleClick}>
+								<Icon name='heart' />
+								{isLiked ? 'Liked' : 'Like'}
+							</Button>
+							<Label
+								as='a'
+								basic
+								color={isLiked ? 'red' : 'grey'}
+								pointing='left'
+							>
+								{totalLikes}
+							</Label>
 						</Button>
-						<Label
-							as='a'
-							basic
-							color={isLiked ? 'red' : 'grey'}
-							pointing='left'
-						>
-							{totalLikes}
-						</Label>
-					</Button>
-				</div>
+					</div>
+				</Container>
+				<Container text>
+					<h3>{description}</h3>
+				</Container>
+				<Container>
+					<footer>
+						<p>&copy; {copyright}</p>
+						<p>Source: Nasa Picture of the day</p>
+						<p>Date: {date}</p>
+					</footer>
+				</Container>
 			</Container>
-			<Container text>
-				<h3>{description}</h3>
-			</Container>
-			<Container>
-				<footer>
-					<p>&copy; {copyright}</p>
-					<p>Source: Nasa Picture of the day</p>
-					<p>Date: {date}</p>
-				</footer>
-			</Container>
-		</Container>
+		</div>
 	);
 };
 
