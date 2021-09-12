@@ -411,4 +411,20 @@ template {
   animation: move-background 50s linear infinite;
 }
 
+.like-photo-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.ui.text.container {
+  color: white;
+}
+.ui.container footer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */

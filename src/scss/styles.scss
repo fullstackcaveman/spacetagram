@@ -4,3 +4,26 @@
 @import 'variables';
 
 @import 'twinkling';
+
+.like-photo-btn {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+.ui {
+	&.text {
+		&.container {
+			color: white;
+		}
+	}
+
+	&.container {
+		footer {
+			display: flex;
+			justify-content: space-evenly;
+			margin-top: 50px;
+			color: white;
+		}
+	}
+}

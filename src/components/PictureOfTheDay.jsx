@@ -8,34 +8,6 @@ import {
 	Label,
 } from 'semantic-ui-react';
 
-// const Container = styled.div`
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// 	text-align: center;
-// `;
-
-// const H1 = styled.h1`
-// 	font-size: 3rem;
-// 	font-weight: bold;
-// 	margin: 30px auto;
-// `;
-
-// const Description = styled.div`
-// 	margin: 10px auto 30px;
-// 	padding: 10px;
-// 	font-size: 1.3rem;
-// 	width: 1024px;
-// `;
-
-// const Footer = styled.div`
-// 	width: 99%;
-// 	background-color: #000;
-// 	padding: 10px;
-// 	color: #fff;
-// `;
-
 const Picture = (props) => {
 	const { title, image, description, copyright, date } = props;
 
@@ -53,7 +25,7 @@ const Picture = (props) => {
 	};
 
 	return (
-		<div className='picture-otd'>
+		<section className='picture-otd'>
 			<Container className='flex-column'>
 				<Header as='h2' color='red' content={`${title} - ${copyright}`} />
 				<Image src={image} alt={title} rounded centered />
@@ -70,7 +42,7 @@ const Picture = (props) => {
 								color={isLiked ? 'red' : 'grey'}
 								pointing='left'
 							>
-								{totalLikes}
+								{totalLikes.toLocaleString()}
 							</Label>
 						</Button>
 					</div>
@@ -86,7 +58,7 @@ const Picture = (props) => {
 					</footer>
 				</Container>
 			</Container>
-		</div>
+		</section>
 	);
 };
 
