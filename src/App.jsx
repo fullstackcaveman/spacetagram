@@ -10,7 +10,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function App() {
 	const [picOfTheDay, setPicOfTheDay] = useState({});
 	const [loading, setLoading] = useState(true);
-	const [highDef, setHighDef] = useState(false);
+	const [highDef, setHighDef] = useState();
+	const [isChecked, setIsChecked] = useState(false);
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -27,8 +28,29 @@ function App() {
 		getPicOfTheDay();
 	}, []);
 
+	useEffect(() => {
+		const stickyDef = localStorage.getItem('high-def');
+		console.log(stickyDef);
+
+		if (!stickyDef) {
+			setHighDef(false);
+			setIsChecked(false);
+		} else if (stickyDef === 'true') {
+			setHighDef(true);
+			setIsChecked(true);
+		}
+	}, []);
+
 	const picQuality = () => {
-		setHighDef(!highDef);
+		if (highDef) {
+			setHighDef(!highDef);
+			localStorage.removeItem('high-def');
+			setIsChecked(false);
+		} else {
+			setHighDef(!highDef);
+			localStorage.setItem('high-def', 'true');
+			setIsChecked(true);
+		}
 	};
 
 	return (
@@ -42,6 +64,7 @@ function App() {
 							<Form inverted>
 								<Form.Field
 									control={Checkbox}
+									checked={isChecked}
 									label={{ children: 'Display HD Photos' }}
 									onClick={picQuality}
 								/>
