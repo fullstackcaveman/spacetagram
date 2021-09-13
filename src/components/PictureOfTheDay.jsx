@@ -13,6 +13,7 @@ import Footer from './elements/Footer';
 const Picture = (props) => {
 	const { copyright, date, description, image, loading, title } = props;
 
+	// user likes would be set in a database to keep localStorage from getting too bloated
 	const [isLiked, setIsLiked] = useState();
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
@@ -45,6 +46,7 @@ const Picture = (props) => {
 		}
 		if (!isLiked) {
 			handleClick();
+			// would write new like count to database in production app
 			localStorage.setItem(element.title, ['true', totalLikes + 1]);
 		}
 	};
@@ -53,7 +55,7 @@ const Picture = (props) => {
 		<section className='picture-otd'>
 			{loading ? (
 				<Loader size='huge' inverted active>
-					Contacting NASA
+					Contacting NASA...
 				</Loader>
 			) : (
 				<Container className='flex-column'>
@@ -84,7 +86,7 @@ const Picture = (props) => {
 					<Container>
 						<footer>
 							<div className='photo-copyright'>
-								<p>&copy; {copyright}</p>
+								<p>Photo &copy; {copyright}</p>
 								<p>Source: Nasa Picture of the day</p>
 								<p>Date: {date}</p>
 							</div>

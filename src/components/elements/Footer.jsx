@@ -8,7 +8,7 @@ const Footer = () => {
 				<a
 					href='https://github.com/fullstackcaveman'
 					target='_blank'
-					rel='noreferrer'
+					rel='noreferrer nofollow'
 				>
 					<Icon className='github' /> GitHub
 				</a>{' '}
@@ -16,7 +16,7 @@ const Footer = () => {
 				<a
 					href='https://linkedin.com/in/fullstackcaveman/'
 					target='_blank'
-					rel='noreferrer'
+					rel='noreferrer nofollow'
 				>
 					{' '}
 					<Icon className='linkedin' /> LinkedIn
