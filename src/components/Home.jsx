@@ -3,6 +3,7 @@ import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Background from '../components/elements/Background';
 import { Checkbox, Form, Header as MainHeader } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -59,7 +60,9 @@ const Home = () => {
 				<Background />
 				<MainHeader as='header' color='red' inverted>
 					<div className='header-content'>
-						<h2>Spacetagram</h2>
+						<Link to='/'>
+							<h2 className='home-link'>Spacetagram</h2>
+						</Link>
 						<div className='high-def'>
 							<Form inverted>
 								<Form.Field
