@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Picture from './components/PictureOfTheDay';
 import Background from './components/elements/Background';
+import { Checkbox, Form, Header as MainHeader } from 'semantic-ui-react';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -27,13 +28,27 @@ function App() {
 	}, []);
 
 	const picQuality = () => {
-		console.log('switch quality');
+		setHighDef(!highDef);
 	};
 
 	return (
 		<>
 			<div className='App'>
 				<Background />
+				<MainHeader as='header' color='red' inverted>
+					<div className='header-content'>
+						<h2>Spacetagram</h2>
+						<div className='high-def'>
+							<Form inverted>
+								<Form.Field
+									control={Checkbox}
+									label={{ children: 'Display HD Photos' }}
+									onClick={picQuality}
+								/>
+							</Form>
+						</div>
+					</div>
+				</MainHeader>
 				<Picture
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}

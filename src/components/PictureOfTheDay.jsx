@@ -59,7 +59,7 @@ const Picture = (props) => {
 				</Loader>
 			) : (
 				<Container className='flex-column'>
-					<Header as='h2' color='teal' content={`${title} - ${copyright}`} />
+					<Header as='h1' color='teal' content={`${title} - ${copyright}`} />
 					<Image src={image} alt={title} rounded centered />
 					<Container>
 						<div className='like-photo-btn'>

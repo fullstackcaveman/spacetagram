@@ -411,7 +411,30 @@ template {
   animation: move-background 50s linear infinite;
 }
 
-.like-photo-btn {
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.high-def form .field label {
+  color: white;
+}
+.high-def form .field label::before {
+  color: white;
+}
+.high-def form .field label::after {
+  color: white;
+}
+
+#root > div > header > div > div > form > div > div > label .like-photo-btn {
   display: flex;
   justify-content: center;
   margin: 20px 0;

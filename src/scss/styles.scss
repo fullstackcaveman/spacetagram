@@ -5,7 +5,37 @@
 
 @import 'twinkling';
 
-.like-photo-btn {
+.flex-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 20px;
+}
+
+.high-def {
+	form {
+		.field {
+			label {
+				color: white;
+
+				&::before {
+					color: white;
+				}
+				&::after {
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+#root > div > header > div > div > form > div > div > label .like-photo-btn {
 	display: flex;
 	justify-content: center;
 	margin: 20px 0;
