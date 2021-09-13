@@ -18,7 +18,6 @@ function App() {
 				.then((res) => {
 					setPicOfTheDay(res.data);
 					setLoading(false);
-					console.log(res.data);
 				})
 				.catch((err) => {
 					console.log(err);

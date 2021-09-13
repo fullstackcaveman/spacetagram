@@ -14,20 +14,19 @@ const Picture = (props) => {
 	const { copyright, date, description, image, loading, title } = props;
 
 	const [isLiked, setIsLiked] = useState();
+	// totalLikes state would come from a database in a full production app
+	const [totalLikes, setTotalLikes] = useState(2048);
 
 	useEffect(() => {
 		const stickyLikes = localStorage.getItem(title);
 
 		if (!stickyLikes) {
-			console.log('no likey');
 			setIsLiked(false);
-		} else if (stickyLikes === 'true') {
-			console.log('likey');
+		} else if (stickyLikes.split(',')[0] === 'true') {
+			setTotalLikes(stickyLikes.split(',')[1]);
 			setIsLiked(true);
 		}
 	}, [title]);
-
-	const [totalLikes, setTotalLikes] = useState(2048);
 
 	const handleClick = () => {
 		if (isLiked) {
@@ -46,7 +45,7 @@ const Picture = (props) => {
 		}
 		if (!isLiked) {
 			handleClick();
-			localStorage.setItem(element.title, 'true');
+			localStorage.setItem(element.title, ['true', totalLikes + 1]);
 		}
 	};
 
