@@ -9,6 +9,7 @@ import {
 	Loader,
 } from 'semantic-ui-react';
 import Footer from './elements/Footer';
+import ShareButton from './elements/ShareButton';
 
 const Picture = (props) => {
 	const { copyright, date, description, image, loading, title } = props;
@@ -78,6 +79,7 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
+							<ShareButton />
 						</div>
 					</Container>
 					<Container text>
