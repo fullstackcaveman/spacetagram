@@ -8,6 +8,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
 	const [picOfTheDay, setPicOfTheDay] = useState({});
+	const [loading, setLoading] = useState(true);
+	const [highDef, setHighDef] = useState(false);
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -15,6 +17,8 @@ function App() {
 				.get(`${BASE_URL}?api_key=${API_KEY}`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
+					setLoading(false);
+					console.log(res.data);
 				})
 				.catch((err) => {
 					console.log(err);
@@ -23,16 +27,21 @@ function App() {
 		getPicOfTheDay();
 	}, []);
 
+	const picQuality = () => {
+		console.log('switch quality');
+	};
+
 	return (
 		<>
 			<div className='App'>
 				<Background />
 				<Picture
 					title={picOfTheDay.title}
-					image={picOfTheDay.url}
+					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
 					description={picOfTheDay.explanation}
 					copyright={picOfTheDay.copyright}
 					date={picOfTheDay.date}
+					loading={loading}
 				/>
 			</div>
 		</>

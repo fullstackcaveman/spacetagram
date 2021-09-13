@@ -422,9 +422,24 @@ template {
 }
 .ui.container footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   margin-top: 50px;
   color: white;
+}
+.ui.container footer .photo-copyright {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ui.container footer .footer-bottom {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ui.container footer .footer-bottom h2 {
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
