@@ -1,7 +1,16 @@
+import { Button, Icon } from 'semantic-ui-react';
+
+const handleShare = () => {
+	console.log('shared');
+};
+
 const ShareButton = () => {
 	return (
-		<div>
-			<h2>Share Button Works</h2>
+		<div className='share-btn'>
+			<Button color='teal' onClick={handleShare}>
+				<Icon name='share square' />
+				Share Photo
+			</Button>
 		</div>
 	);
 };
