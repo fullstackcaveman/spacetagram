@@ -14,6 +14,8 @@ const CustomPotd = (input) => {
 	const history = useHistory();
 	const searchDate = history.location.pathname.slice(1, 11);
 
+	console.log(history);
+
 	const [picOfTheDay, setPicOfTheDay] = useState({});
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();

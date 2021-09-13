@@ -470,6 +470,10 @@ template {
   font-size: 1rem;
 }
 
+.share-btn {
+  margin: 0 10px;
+}
+
 #root > div > div.App > header > div > div.search-field > div > form > div > label {
   font-size: 1.1rem;
 }

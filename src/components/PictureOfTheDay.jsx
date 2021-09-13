@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import {
 	Button,
 	Container,
@@ -13,6 +14,10 @@ import ShareButton from './elements/ShareButton';
 
 const Picture = (props) => {
 	const { copyright, date, description, image, loading, title } = props;
+
+	const history = useHistory();
+
+	console.log(history);
 
 	// user likes would be set in a database to keep localStorage from getting too bloated
 	const [isLiked, setIsLiked] = useState();
