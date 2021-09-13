@@ -421,7 +421,13 @@ template {
 .header-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 20px;
+  margin-bottom: 50px;
+}
+.header-content h2 {
+  font-size: 2.5rem;
+  padding-bottom: 5px;
 }
 
 .high-def form .field label {
@@ -462,6 +468,16 @@ template {
 }
 .ui.container footer .footer-bottom h2 {
   font-size: 1rem;
+}
+
+#root > div > div.App > header > div > div.search-field > div > form > div > label {
+  font-size: 1.1rem;
+}
+
+#root > div > div.App > header > div > div.search-field > div > form > div > div > div > div > input {
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -60,7 +60,12 @@ const Picture = (props) => {
 				</Loader>
 			) : (
 				<Container className='flex-column'>
-					<Header as='h1' color='teal' content={`${title} - ${copyright}`} />
+					{copyright === 'Unknown' ? (
+						<Header as='h1' color='teal' content={`${title}`} />
+					) : (
+						<Header as='h1' color='teal' content={`${title} - ${copyright}`} />
+					)}
+
 					<Image src={image} alt={title} rounded centered />
 					<Container>
 						<div className='like-photo-btn'>
@@ -88,9 +93,18 @@ const Picture = (props) => {
 					<Container>
 						<footer>
 							<div className='photo-copyright'>
-								<p>Photo &copy; {copyright}</p>
-								<p>Source: Nasa Picture of the day</p>
-								<p>Date: {date}</p>
+								{copyright === 'Unknown' ? (
+									<>
+										<p>Source: Nasa Picture of the day</p>
+										<p>Date: {date}</p>
+									</>
+								) : (
+									<>
+										<p>Photo &copy; {copyright}</p>
+										<p>Source: Nasa Picture of the day</p>
+										<p>Date: {date}</p>
+									</>
+								)}
 							</div>
 							<Footer />
 						</footer>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Background from '../components/elements/Background';
@@ -9,7 +10,10 @@ import PictureSelector from './elements/PictureSelector';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const Home = () => {
+const CustomPotd = (input) => {
+	const history = useHistory();
+	const searchDate = history.location.pathname.slice(1, 11);
+
 	const [picOfTheDay, setPicOfTheDay] = useState({});
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
@@ -18,7 +22,7 @@ const Home = () => {
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
-				.get(`${BASE_URL}?api_key=${API_KEY}`)
+				.get(`${BASE_URL}?api_key=${API_KEY}&date=${searchDate}`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
 					setLoading(false);
@@ -28,11 +32,11 @@ const Home = () => {
 				});
 		};
 		getPicOfTheDay();
-	}, []);
+		setLoading(false);
+	}, [searchDate]);
 
 	useEffect(() => {
 		const stickyDef = localStorage.getItem('high-def');
-		console.log(stickyDef);
 
 		if (!stickyDef) {
 			setHighDef(false);
@@ -65,7 +69,7 @@ const Home = () => {
 							<h2 className='home-link'>Spacetagram</h2>
 						</Link>
 						<div className='search-field'>
-							<PictureSelector search={new Date()} />
+							<PictureSelector search={new Date(searchDate)} />
 						</div>
 						<div className='high-def'>
 							<Form inverted>
@@ -83,7 +87,7 @@ const Home = () => {
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
 					description={picOfTheDay.explanation}
-					copyright={picOfTheDay.copyright}
+					copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
 					date={picOfTheDay.date}
 					loading={loading}
 				/>
@@ -92,4 +96,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default CustomPotd;
