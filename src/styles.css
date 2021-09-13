@@ -434,14 +434,13 @@ template {
   color: white;
 }
 
-#root > div > header > div > div > form > div > div > label .like-photo-btn {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
 .ui.text.container {
   color: white;
+}
+.ui.container .like-photo-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
 }
 .ui.container footer {
   display: flex;

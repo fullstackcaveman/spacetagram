@@ -35,12 +35,6 @@
 	}
 }
 
-#root > div > header > div > div > form > div > div > label .like-photo-btn {
-	display: flex;
-	justify-content: center;
-	margin: 20px 0;
-}
-
 .ui {
 	&.text {
 		&.container {
@@ -49,6 +43,14 @@
 	}
 
 	&.container {
+		//
+
+		.like-photo-btn {
+			display: flex;
+			justify-content: center;
+			margin: 20px auto;
+		}
+
 		footer {
 			display: flex;
 			flex-direction: column;
