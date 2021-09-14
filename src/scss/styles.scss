@@ -125,3 +125,9 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+#root > div > div.App > section > div > div.ui.container.picture-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

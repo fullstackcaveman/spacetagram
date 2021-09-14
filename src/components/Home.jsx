@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Background from '../components/elements/Background';
-import { Checkbox, Form, Header as MainHeader } from 'semantic-ui-react';
+import { Checkbox, Form, Header as MainHeader, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PictureSelector from './elements/PictureSelector';
 
@@ -79,6 +79,7 @@ const Home = () => {
 						</div>
 					</div>
 				</MainHeader>
+
 				<Picture
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
