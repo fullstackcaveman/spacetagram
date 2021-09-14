@@ -14,6 +14,7 @@ const Home = () => {
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
 	const [isChecked, setIsChecked] = useState(false);
+	const [picDate, setPicDate] = useState();
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -28,6 +29,7 @@ const Home = () => {
 				});
 		};
 		getPicOfTheDay();
+		setPicDate(new Date());
 	}, []);
 
 	useEffect(() => {
@@ -81,6 +83,7 @@ const Home = () => {
 				</MainHeader>
 
 				<Picture
+					picDate={picDate}
 					hdurl={picOfTheDay.hdurl}
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}

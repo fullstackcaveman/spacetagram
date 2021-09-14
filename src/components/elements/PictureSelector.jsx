@@ -32,8 +32,12 @@ const PictureSelector = ({ search }) => {
 	};
 
 	const dateChangeHandler = (date) => {
-		history.push(formatDate(date));
-		setStartDate(date);
+		if (formatDate(date) === formatDate(new Date())) {
+			history.push('/');
+		} else {
+			history.push(formatDate(date));
+			setStartDate(date);
+		}
 	};
 
 	return (

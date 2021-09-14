@@ -8,7 +8,6 @@ import {
 	Image,
 	Label,
 	Loader,
-	Popup,
 } from 'semantic-ui-react';
 import Footer from './elements/Footer';
 import ShareButton from './elements/ShareButton';
@@ -77,15 +76,7 @@ const Picture = (props) => {
 						<Header as='h1' color='teal' content={`${title} - ${copyright}`} />
 					)}
 					<Container className='picture-section'>
-						<Popup
-							content='Previous Day'
-							trigger={<Icon name='chevron left' size='big' inverted link />}
-						/>
 						<Image src={image} alt={title} rounded centered />
-						<Popup
-							content='Next Day'
-							trigger={<Icon name='chevron right' size='big' inverted link />}
-						/>
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>
