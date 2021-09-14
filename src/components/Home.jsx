@@ -34,7 +34,6 @@ const Home = () => {
 
 	useEffect(() => {
 		const stickyDef = localStorage.getItem('high-def');
-		console.log(stickyDef);
 
 		if (!stickyDef) {
 			setHighDef(false);

@@ -24,8 +24,6 @@ import {
 const SharePicture = ({ description, hdurl, pathName }) => {
 	const shareUrl = `https://nasa-potd.fullstackcaveman.com${pathName}`;
 
-	console.log(hdurl);
-
 	return (
 		<div className='social-shares-modal'>
 			<div>
