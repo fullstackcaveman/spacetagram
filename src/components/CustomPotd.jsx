@@ -18,6 +18,8 @@ const CustomPotd = (input) => {
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
 	const [isChecked, setIsChecked] = useState(false);
+	// eslint-disable-next-line
+	const [picDate, setPicDate] = useState(new Date(searchDate));
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -84,6 +86,8 @@ const CustomPotd = (input) => {
 					</div>
 				</MainHeader>
 				<Picture
+					picDate={picDate}
+					nextDay={true}
 					hdurl={picOfTheDay.hdurl}
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
