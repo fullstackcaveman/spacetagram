@@ -83,7 +83,7 @@ const Home = () => {
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
 					description={picOfTheDay.explanation}
-					copyright={picOfTheDay.copyright}
+					copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
 					date={picOfTheDay.date}
 					loading={loading}
 				/>
