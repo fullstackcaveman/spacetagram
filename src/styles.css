@@ -484,4 +484,9 @@ template {
   text-align: center;
 }
 
+.social-shares-modal {
+  display: flex;
+  justify-content: space-around;
+}
+
 /*# sourceMappingURL=styles.css.map */

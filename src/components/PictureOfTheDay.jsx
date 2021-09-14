@@ -11,18 +11,19 @@ import {
 } from 'semantic-ui-react';
 import Footer from './elements/Footer';
 import ShareButton from './elements/ShareButton';
+import ShareModal from './elements/ShareModal';
 
 const Picture = (props) => {
 	const { copyright, date, description, image, loading, title } = props;
 
 	const history = useHistory();
 
-	console.log(history);
-
 	// user likes would be set in a database to keep localStorage from getting too bloated
 	const [isLiked, setIsLiked] = useState();
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
+
+	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
 		const stickyLikes = localStorage.getItem(title);
@@ -57,6 +58,10 @@ const Picture = (props) => {
 		}
 	};
 
+	const handleShowSocials = () => {
+		setOpenModal(!openModal);
+	};
+
 	return (
 		<section className='picture-otd'>
 			{loading ? (
@@ -89,7 +94,7 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
-							<ShareButton />
+							<ShareButton showSocials={handleShowSocials} />
 						</div>
 					</Container>
 					<Container text>
@@ -114,6 +119,11 @@ const Picture = (props) => {
 							<Footer />
 						</footer>
 					</Container>
+					<ShareModal
+						openModal={openModal}
+						pathName={history.location.pathname}
+						setOpenModal={setOpenModal}
+					/>
 				</Container>
 			)}
 		</section>
