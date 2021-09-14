@@ -15,7 +15,7 @@ import ShareButton from './elements/ShareButton';
 import ShareModal from './elements/ShareModal';
 
 const Picture = (props) => {
-	const { copyright, date, description, image, loading, title } = props;
+	const { copyright, date, description, hdurl, image, loading, title } = props;
 
 	const history = useHistory();
 
@@ -130,6 +130,8 @@ const Picture = (props) => {
 						</footer>
 					</Container>
 					<ShareModal
+						description={description}
+						hdurl={hdurl}
 						openModal={openModal}
 						pathName={history.location.pathname}
 						setOpenModal={setOpenModal}

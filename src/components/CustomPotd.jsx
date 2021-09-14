@@ -84,6 +84,7 @@ const CustomPotd = (input) => {
 					</div>
 				</MainHeader>
 				<Picture
+					hdurl={picOfTheDay.hdurl}
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
 					description={picOfTheDay.explanation}

@@ -21,8 +21,10 @@ import {
 	WhatsappIcon,
 } from 'react-share';
 
-const SharePicture = ({ pathName }) => {
+const SharePicture = ({ description, hdurl, pathName }) => {
 	const shareUrl = `https://nasa-potd.fullstackcaveman.com${pathName}`;
+
+	console.log(hdurl);
 
 	return (
 		<div className='social-shares-modal'>
@@ -54,7 +56,8 @@ const SharePicture = ({ pathName }) => {
 				<PinterestShareButton
 					quote='Check this out!'
 					url={shareUrl}
-					media={shareUrl}
+					media={hdurl}
+					description={description}
 					disabled={false}
 					children={<PinterestIcon round={true} size={40} />}
 				/>
