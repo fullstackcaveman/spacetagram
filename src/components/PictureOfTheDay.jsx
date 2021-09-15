@@ -102,7 +102,7 @@ const Picture = (props) => {
 						<h3>{description}</h3>
 					</Container>
 					<Container>
-						<footer>
+						<footer className='footer-top'>
 							<div className='photo-copyright'>
 								{copyright === 'Unknown' ? (
 									<>
