@@ -131,3 +131,18 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+@media (max-width: 650px) {
+	.header-content {
+		flex-direction: column;
+
+		h2 {
+			font-size: 3rem;
+			margin-bottom: 30px;
+		}
+
+		.search-field {
+			margin-bottom: 20px;
+		}
+	}
+}

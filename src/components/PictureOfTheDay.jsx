@@ -121,6 +121,9 @@ const Picture = (props) => {
 						</footer>
 					</Container>
 					<ShareModal
+						summary={description}
+						source='https://nasa-potd.fullstackcaveman.com'
+						title={title}
 						description={description}
 						hdurl={hdurl}
 						openModal={openModal}

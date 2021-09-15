@@ -495,4 +495,17 @@ template {
   align-items: center;
 }
 
+@media (max-width: 650px) {
+  .header-content {
+    flex-direction: column;
+  }
+  .header-content h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  .header-content .search-field {
+    margin-bottom: 20px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

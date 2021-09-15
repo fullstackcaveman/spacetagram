@@ -21,14 +21,21 @@ import {
 	WhatsappIcon,
 } from 'react-share';
 
-const SharePicture = ({ description, hdurl, pathName }) => {
+const SharePicture = ({
+	description,
+	summary,
+	source,
+	title,
+	hdurl,
+	pathName,
+}) => {
 	const shareUrl = `https://nasa-potd.fullstackcaveman.com${pathName}`;
 
 	return (
 		<div className='social-shares-modal'>
 			<div>
 				<FacebookShareButton
-					quote='Check this out!'
+					quote={title}
 					url={shareUrl}
 					disabled={false}
 					children={<FacebookIcon round={true} size={40} />}
@@ -36,7 +43,8 @@ const SharePicture = ({ description, hdurl, pathName }) => {
 			</div>
 			<div>
 				<EmailShareButton
-					quote='Check this out!'
+					subject={title}
+					body='I found this cool photo...Check it out!'
 					url={shareUrl}
 					disabled={false}
 					children={<EmailIcon round={true} size={40} />}
@@ -45,6 +53,9 @@ const SharePicture = ({ description, hdurl, pathName }) => {
 			<div>
 				<LinkedinShareButton
 					quote='Check this out!'
+					source={source}
+					summary={summary}
+					title={title}
 					url={shareUrl}
 					disabled={false}
 					children={<LinkedinIcon round={true} size={40} />}
