@@ -80,8 +80,8 @@ const Picture = (props) => {
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>
-							<Button as='div' labelPosition='right'>
-								<Button color={isLiked ? 'red' : 'teal'} onClick={handleClick}>
+							<Button as='div' labelPosition='right' onClick={handleClick}>
+								<Button color={isLiked ? 'red' : 'teal'}>
 									<Icon name='heart' />
 									{isLiked ? 'Liked' : 'Like'}
 								</Button>
