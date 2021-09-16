@@ -4,6 +4,7 @@
 @import 'variables';
 
 @import 'twinkling';
+@import 'glowOnHover';
 
 .flex-row {
 	display: flex;
@@ -28,6 +29,7 @@
 .high-def {
 	form {
 		.field {
+			padding: 5px;
 			label {
 				color: white;
 

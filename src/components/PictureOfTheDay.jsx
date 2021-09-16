@@ -23,8 +23,6 @@ const Picture = (props) => {
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
 
-	console.log(typeof totalLikes);
-
 	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
@@ -75,6 +73,7 @@ const Picture = (props) => {
 						<div className='like-photo-btn'>
 							<Button as='div' labelPosition='right'>
 								<Button
+									className='glow-on-hover'
 									color={isLiked ? 'red' : 'teal'}
 									onClick={() => setLocalStorage({ title })}
 								>
