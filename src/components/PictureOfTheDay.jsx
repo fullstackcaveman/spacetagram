@@ -81,7 +81,10 @@ const Picture = (props) => {
 					<Container>
 						<div className='like-photo-btn'>
 							<Button as='div' labelPosition='right' onClick={handleClick}>
-								<Button color={isLiked ? 'red' : 'teal'}>
+								<Button
+									color={isLiked ? 'red' : 'teal'}
+									onClick={() => setLocalStorage({ title })}
+								>
 									<Icon name='heart' />
 									{isLiked ? 'Liked' : 'Like'}
 								</Button>
