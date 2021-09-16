@@ -23,6 +23,8 @@ const Picture = (props) => {
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
 
+	console.log(typeof totalLikes);
+
 	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
@@ -31,29 +33,20 @@ const Picture = (props) => {
 		if (!stickyLikes) {
 			setIsLiked(false);
 		} else if (stickyLikes.split(',')[0] === 'true') {
-			setTotalLikes(stickyLikes.split(',')[1]);
+			setTotalLikes(parseInt(stickyLikes.split(',')[1]));
 			setIsLiked(true);
 		}
 	}, [title]);
 
-	const handleClick = () => {
+	const setLocalStorage = (element) => {
 		if (isLiked) {
 			setTotalLikes(totalLikes - 1);
 			setIsLiked(false);
-		} else {
-			setTotalLikes(totalLikes + 1);
-			setIsLiked(true);
-		}
-	};
-
-	const setLocalStorage = (element) => {
-		if (isLiked) {
-			handleClick();
 			localStorage.removeItem(element.title);
 		}
 		if (!isLiked) {
-			handleClick();
-			// would write new like count to database in production app
+			setTotalLikes(totalLikes + 1);
+			setIsLiked(true);
 			localStorage.setItem(element.title, ['true', totalLikes + 1]);
 		}
 	};
@@ -80,7 +73,7 @@ const Picture = (props) => {
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>
-							<Button as='div' labelPosition='right' onClick={handleClick}>
+							<Button as='div' labelPosition='right'>
 								<Button
 									color={isLiked ? 'red' : 'teal'}
 									onClick={() => setLocalStorage({ title })}
