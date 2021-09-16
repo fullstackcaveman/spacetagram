@@ -509,15 +509,6 @@ template {
 .high-def form .field {
   padding: 5px;
 }
-.high-def form .field label {
-  color: white;
-}
-.high-def form .field label::before {
-  color: white;
-}
-.high-def form .field label::after {
-  color: white;
-}
 
 .ui.text.container {
   color: white;
@@ -532,7 +523,7 @@ template {
   flex-direction: column;
   justify-content: space-evenly;
   margin-top: 50px;
-  color: white;
+  color: #f72700;
 }
 .ui.container footer .photo-copyright {
   display: flex;
