@@ -506,6 +506,14 @@ template {
   color: #f72700;
 }
 
+.search-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .high-def form .field {
   padding: 5px;
 }

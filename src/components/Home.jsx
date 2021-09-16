@@ -71,16 +71,16 @@ const Home = () => {
 						</Link>
 						<div className='search-field'>
 							<PictureSelector search={new Date()} />
-						</div>
-						<div className='high-def'>
-							<Form inverted>
-								<Form.Field
-									control={Checkbox}
-									checked={isChecked}
-									label={{ children: 'Display HD Photos' }}
-									onClick={picQuality}
-								/>
-							</Form>
+							<div className='high-def'>
+								<Form inverted>
+									<Form.Field
+										control={Checkbox}
+										checked={isChecked}
+										label={{ children: 'Display HD Photos' }}
+										onClick={picQuality}
+									/>
+								</Form>
+							</div>
 						</div>
 					</div>
 				</MainHeader>
