@@ -24,19 +24,22 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 
 		.spacetagram {
 			justify-content: center;
-		}
-	}
 
-	h2 {
-		font-size: 2.5rem;
-		margin-left: 20px;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		color: #f72700;
+			h2 {
+				font-family: $logo-font;
+				font-size: 3.3rem;
+				font-weight: 100;
+				margin-left: 20px;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				color: #f72700;
+			}
+		}
 	}
 }
 
@@ -154,11 +157,14 @@
 
 		.header-logo {
 			flex-direction: column;
-		}
 
-		h2 {
-			font-size: 3rem;
-			margin-bottom: 30px;
+			.spacetagram {
+				.home-link {
+					font-size: 3.8rem;
+					margin-bottom: 30px;
+					margin-left: 0;
+				}
+			}
 		}
 
 		.search-field {

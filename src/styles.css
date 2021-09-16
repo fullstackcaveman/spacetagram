@@ -337,6 +337,11 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "Billion-Dreams";
+  src: local("Billion-Dreams"), url("./fonts/Billion-Dreams.TTF") format("truetype");
+  font-weight: normal;
+}
 @keyframes move-background {
   from {
     -webkit-transform: translate3d(0px, 0px, 0px);
@@ -485,12 +490,15 @@ template {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .header-content .header-logo .spacetagram {
   justify-content: center;
 }
-.header-content h2 {
-  font-size: 2.5rem;
+.header-content .header-logo .spacetagram h2 {
+  font-family: "Billion-Dreams", sans-serif;
+  font-size: 3.3rem;
+  font-weight: 100;
   margin-left: 20px;
   justify-content: center;
   align-items: center;
@@ -573,9 +581,10 @@ template {
   .header-content .header-logo {
     flex-direction: column;
   }
-  .header-content h2 {
-    font-size: 3rem;
+  .header-content .header-logo .spacetagram .home-link {
+    font-size: 3.8rem;
     margin-bottom: 30px;
+    margin-left: 0;
   }
   .header-content .search-field {
     margin-bottom: 20px;

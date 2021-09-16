@@ -1,12 +1,12 @@
-// @font-face {
-// 	font-family: 'Billiondreams_Personal';
-// 	src: local('Billiondreams_Personal'),
-// 		url('../fonts/BILLIONDREAMS_PERSONAL.TTF');
-// 	font-weight: normal;
-// }
+@font-face {
+	font-family: 'Billion-Dreams';
+	src: local('Billion-Dreams'),
+		url('./fonts/Billion-Dreams.TTF') format('truetype');
+	font-weight: normal;
+}
 
-// // Fonts
-// // $logo-font: 'BILLIONDREAMS_PERSONAL', sans-serif;
+// Fonts
+$logo-font: 'Billion-Dreams', sans-serif;
 
 // Background Animation
 $background-animation-time: 50s;
