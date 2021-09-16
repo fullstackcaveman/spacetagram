@@ -20,9 +20,23 @@
 	padding: 5px 20px;
 	margin-bottom: 50px;
 
+	.header-logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.spacetagram {
+			justify-content: center;
+		}
+	}
+
 	h2 {
 		font-size: 2.5rem;
-		padding-bottom: 5px;
+		margin-left: 20px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: #f72700;
 	}
 }
 
@@ -134,9 +148,13 @@
 	align-items: center;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
 	.header-content {
 		flex-direction: column;
+
+		.header-logo {
+			flex-direction: column;
+		}
 
 		h2 {
 			font-size: 3rem;

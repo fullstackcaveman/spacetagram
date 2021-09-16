@@ -3,9 +3,10 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Background from '../components/elements/Background';
-import { Checkbox, Form, Header as MainHeader } from 'semantic-ui-react';
+import { Checkbox, Form, Header as MainHeader, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PictureSelector from './elements/PictureSelector';
+import logo from '../images/spacetagram-logo.png';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -67,8 +68,11 @@ const CustomPotd = (input) => {
 				<Background />
 				<MainHeader as='header' color='red' inverted>
 					<div className='header-content'>
-						<Link to='/'>
-							<h2 className='home-link'>Spacetagram</h2>
+						<Link to='/' className='header-logo'>
+							<Image src={logo} size='tiny' alt='spacetagram logo' />
+							<div className='spacetagram'>
+								<h2 className='home-link'>Spacetagram</h2>
+							</div>
 						</Link>
 						<div className='search-field'>
 							<PictureSelector search={new Date(searchDate)} />
