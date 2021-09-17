@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Background from '../components/elements/Background';
@@ -9,7 +9,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const CustomPotd = ({ match }) => {
-	const history = useHistory();
+	// const history = useHistory();
 	const searchDate = match.params.date;
 	// const searchDate = history.location.pathname.slice(1, 11);
 
