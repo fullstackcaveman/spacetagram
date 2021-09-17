@@ -6,7 +6,7 @@ const ShareButton = ({ showSocials }) => {
 	};
 
 	return (
-		<div className='share-btn'>
+		<div className='share-btn' id='share-btn'>
 			<Button color='teal' onClick={handleShare} className='glow-on-hover'>
 				<Icon name='share alternate' />
 				Share Photo
