@@ -526,6 +526,9 @@ template {
   justify-content: center;
   margin: 20px auto;
 }
+.ui.container .like-photo-btn #like-btn {
+  margin: 0;
+}
 .ui.container footer {
   display: flex;
   flex-direction: column;

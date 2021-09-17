@@ -85,7 +85,7 @@ const Picture = (props) => {
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>
-							<Button as='div' labelPosition='right'>
+							<Button as='div' labelPosition='right' id='like-btn'>
 								<Button
 									className='glow-on-hover'
 									color={isLiked ? 'red' : 'teal'}
@@ -104,7 +104,7 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
-							{/* <Link to='/liked-pics'>
+							<Link to='/liked-pics'>
 								<Button
 									color='blue'
 									className='glow-on-hover'
@@ -112,7 +112,7 @@ const Picture = (props) => {
 								>
 									Show Liked Pics
 								</Button>
-							</Link> */}
+							</Link>
 							<ShareButton showSocials={handleShowSocials} />
 						</div>
 					</Container>
