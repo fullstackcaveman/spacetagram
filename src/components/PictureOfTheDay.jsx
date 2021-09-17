@@ -14,7 +14,17 @@ import ShareButton from './elements/ShareButton';
 import ShareModal from './elements/ShareModal';
 
 const Picture = (props) => {
-	const { copyright, date, description, hdurl, image, loading, title } = props;
+	const {
+		copyright,
+		date,
+		description,
+		hdurl,
+		image,
+		loading,
+		mediaType,
+		thumbs,
+		title,
+	} = props;
 
 	const history = useHistory();
 
@@ -22,7 +32,6 @@ const Picture = (props) => {
 	const [isLiked, setIsLiked] = useState();
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
-
 	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
@@ -67,7 +76,11 @@ const Picture = (props) => {
 						<Header as='h1' color='teal' content={`${title} - ${copyright}`} />
 					)}
 					<Container className='picture-section'>
-						<Image src={image} alt={title} rounded centered />
+						{mediaType === 'video' ? (
+							<Image src={thumbs} alt={title} rounded centered />
+						) : (
+							<Image src={image} alt={title} rounded centered />
+						)}
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>

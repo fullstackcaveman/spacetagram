@@ -19,7 +19,7 @@ const CustomPotd = ({ match }) => {
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
-				.get(`${BASE_URL}?api_key=${API_KEY}&date=${searchDate}`)
+				.get(`${BASE_URL}?api_key=${API_KEY}&date=${searchDate}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
 					setLoading(false);
@@ -67,6 +67,8 @@ const CustomPotd = ({ match }) => {
 				/>
 				<Picture
 					picDate={picDate}
+					mediaType={picOfTheDay.media_type}
+					thumbs={picOfTheDay.thumbnail_url}
 					nextDay={true}
 					hdurl={picOfTheDay.hdurl}
 					title={picOfTheDay.title}

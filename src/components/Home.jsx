@@ -14,10 +14,12 @@ const Home = () => {
 	const [isChecked, setIsChecked] = useState(false);
 	const picDate = new Date();
 
+	console.log(picOfTheDay);
+
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
-				.get(`${BASE_URL}?api_key=${API_KEY}`)
+				.get(`${BASE_URL}?api_key=${API_KEY}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
 					setLoading(false);
@@ -64,6 +66,8 @@ const Home = () => {
 				/>
 				<Picture
 					picDate={picDate}
+					mediaType={picOfTheDay.media_type}
+					thumbs={picOfTheDay.thumbnail_url}
 					hdurl={picOfTheDay.hdurl}
 					title={picOfTheDay.title}
 					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
