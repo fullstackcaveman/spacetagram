@@ -3,7 +3,7 @@ import { Form, Image, Header as MainHeader, Checkbox } from 'semantic-ui-react';
 import PictureSelector from './PictureSelector';
 import logo from '../../images/spacetagram-logo.png';
 
-const Header = ({ isChecked, picQuality }) => {
+const Header = ({ isChecked, picDate, setPicDate, picQuality }) => {
 	return (
 		<MainHeader as='header' color='red' inverted>
 			<div className='header-content'>

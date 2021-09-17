@@ -9,7 +9,7 @@ const ShareModal = ({
 	setOpenModal,
 }) => {
 	return (
-		<Modal dimmer='blurring' open={openModal}>
+		<Modal dimmer='blurring' open={openModal} id='modal'>
 			<Modal.Header>Share Photo</Modal.Header>
 			<Modal.Content>
 				<Modal.Description>

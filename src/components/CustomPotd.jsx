@@ -8,9 +8,12 @@ import Header from './elements/Header';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const CustomPotd = (input) => {
+const CustomPotd = ({ match }) => {
 	const history = useHistory();
-	const searchDate = history.location.pathname.slice(1, 11);
+	const searchDate = match.params.date;
+	// const searchDate = history.location.pathname.slice(1, 11);
+
+	console.log(match.params.date);
 
 	const [picOfTheDay, setPicOfTheDay] = useState({});
 	const [loading, setLoading] = useState(true);
@@ -63,7 +66,12 @@ const CustomPotd = (input) => {
 		<>
 			<div className='App'>
 				<Background />
-				<Header isChecked={isChecked} picQuality={picQuality} />
+				<Header
+					isChecked={isChecked}
+					picQuality={picQuality}
+					picDate={picDate}
+					setPicDate={setPicDate}
+				/>
 				<Picture
 					picDate={picDate}
 					nextDay={true}

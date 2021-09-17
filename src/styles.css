@@ -562,9 +562,40 @@ template {
   text-align: center;
 }
 
-.social-shares-modal {
+#modal {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+#modal .content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+#modal .content .description {
+  max-width: 100%;
+}
+#modal .content .description .social-shares-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+#modal .content .description .social-shares-modal .m5 {
+  margin: 0 5px;
+}
+
+body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
+  display: flex;
 }
 
 #root > div > div.App > section > div > div.ui.container.picture-section {

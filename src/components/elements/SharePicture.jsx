@@ -33,7 +33,7 @@ const SharePicture = ({
 
 	return (
 		<div className='social-shares-modal'>
-			<div>
+			<div className='m5'>
 				<FacebookShareButton
 					quote={title}
 					url={shareUrl}
@@ -41,7 +41,7 @@ const SharePicture = ({
 					children={<FacebookIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<EmailShareButton
 					subject={title}
 					body='I found this cool photo...Check it out!'
@@ -50,7 +50,7 @@ const SharePicture = ({
 					children={<EmailIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<LinkedinShareButton
 					quote='Check this out!'
 					source={source}
@@ -61,7 +61,7 @@ const SharePicture = ({
 					children={<LinkedinIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<PinterestShareButton
 					quote='Check this out!'
 					url={shareUrl}
@@ -71,7 +71,7 @@ const SharePicture = ({
 					children={<PinterestIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<RedditShareButton
 					quote='Check this out!'
 					url={shareUrl}
@@ -79,7 +79,7 @@ const SharePicture = ({
 					children={<RedditIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<TelegramShareButton
 					quote='Check this out!'
 					url={shareUrl}
@@ -87,7 +87,7 @@ const SharePicture = ({
 					children={<TelegramIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<TwitterShareButton
 					quote='Check this out!'
 					url={shareUrl}
@@ -95,7 +95,7 @@ const SharePicture = ({
 					children={<TwitterIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<WhatsappShareButton
 					quote='Check this out!'
 					url={shareUrl}
@@ -103,7 +103,7 @@ const SharePicture = ({
 					children={<WhatsappIcon round={true} size={40} />}
 				/>
 			</div>
-			<div>
+			<div className='m5'>
 				<TumblrShareButton
 					quote='Check this out!'
 					url={shareUrl}
