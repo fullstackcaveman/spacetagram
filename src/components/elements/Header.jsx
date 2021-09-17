@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Form, Image, Header as MainHeader, Checkbox } from 'semantic-ui-react';
+import {
+	Form,
+	Image,
+	Header as MainHeader,
+	Checkbox,
+	Popup,
+} from 'semantic-ui-react';
 import PictureSelector from './PictureSelector';
 import logo from '../../images/spacetagram-logo.png';
 
@@ -15,15 +21,24 @@ const Header = ({ isChecked, picDate, setPicDate, picQuality }) => {
 				</Link>
 				<div className='search-field'>
 					<PictureSelector search={new Date()} />
+
 					<div className='high-def'>
-						<Form inverted>
-							<Form.Field
-								control={Checkbox}
-								checked={isChecked}
-								label={{ children: 'Display HD Photos' }}
-								onClick={picQuality}
-							/>
-						</Form>
+						<Popup
+							trigger={
+								<Form inverted>
+									<Form.Field
+										control={Checkbox}
+										checked={isChecked}
+										label={{ children: 'Display HD Photos' }}
+										onClick={picQuality}
+									/>
+								</Form>
+							}
+							content='Check to display High-Res photos'
+							inverted
+							position='bottom left'
+							size='mini'
+						/>
 					</div>
 				</div>
 			</div>
