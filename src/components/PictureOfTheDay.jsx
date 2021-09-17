@@ -85,7 +85,7 @@ const Picture = (props) => {
 					</Container>
 					<Container>
 						<div className='like-photo-btn'>
-							<Button as='div' labelPosition='right'>
+							<Button as='div' labelPosition='right' id='like-btn'>
 								<Button
 									className='glow-on-hover'
 									color={isLiked ? 'red' : 'teal'}

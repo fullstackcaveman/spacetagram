@@ -526,6 +526,9 @@ template {
   justify-content: center;
   margin: 20px auto;
 }
+.ui.container .like-photo-btn #like-btn {
+  margin: 0;
+}
 .ui.container footer {
   display: flex;
   flex-direction: column;
@@ -549,7 +552,7 @@ template {
 }
 
 #show-liked-pics {
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 #root > div > div.App > header > div > div.search-field > div > form > div > label {
@@ -585,6 +588,10 @@ template {
   max-width: 100%;
 }
 #modal .content .description .social-shares-modal .m5 {
+  margin: 0 5px;
+}
+
+.m5 {
   margin: 0 5px;
 }
 

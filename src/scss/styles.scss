@@ -83,6 +83,10 @@
 			display: flex;
 			justify-content: center;
 			margin: 20px auto;
+
+			#like-btn {
+				margin: 0;
+			}
 		}
 
 		footer {
@@ -112,12 +116,8 @@
 	}
 }
 
-.share-btn {
-	// margin: 0 10px;
-}
-
 #show-liked-pics {
-	margin: 0 10px;
+	margin: 0 5px;
 }
 
 // Date Picker
@@ -179,6 +179,10 @@
 			}
 		}
 	}
+}
+
+.m5 {
+	margin: 0 5px;
 }
 
 body
