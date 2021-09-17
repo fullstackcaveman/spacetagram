@@ -549,7 +549,7 @@ template {
 }
 
 #show-liked-pics {
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 #root > div > div.App > header > div > div.search-field > div > form > div > label {
@@ -585,6 +585,10 @@ template {
   max-width: 100%;
 }
 #modal .content .description .social-shares-modal .m5 {
+  margin: 0 5px;
+}
+
+.m5 {
   margin: 0 5px;
 }
 
