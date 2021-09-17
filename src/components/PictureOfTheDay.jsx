@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import {
 	Button,
 	Container,
@@ -103,6 +104,15 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
+							<Link to='/liked-pics'>
+								<Button
+									color='blue'
+									className='glow-on-hover'
+									id='show-liked-pics'
+								>
+									Show Liked Pics
+								</Button>
+							</Link>
 							<ShareButton showSocials={handleShowSocials} />
 						</div>
 					</Container>
