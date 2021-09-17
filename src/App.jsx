@@ -2,11 +2,13 @@ import { Route, Switch } from 'react-router-dom';
 import CustomPotd from './components/CustomPotd';
 import Background from './components/elements/Background';
 import Home from './components/Home';
+import LikedPics from './components/LikedPics';
 
 function App() {
 	return (
 		<div className='App'>
 			<Switch>
+				<Route path='/liked-pics' component={LikedPics} />
 				<Route path='/:date' component={CustomPotd} />
 				<Route path='/' component={Home} />
 			</Switch>
