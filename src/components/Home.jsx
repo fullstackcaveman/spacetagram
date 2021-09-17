@@ -12,7 +12,7 @@ const Home = () => {
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
 	const [isChecked, setIsChecked] = useState(false);
-	const [picDate, setPicDate] = useState();
+	const picDate = new Date();
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -27,7 +27,6 @@ const Home = () => {
 				});
 		};
 		getPicOfTheDay();
-		setPicDate(new Date());
 	}, []);
 
 	useEffect(() => {
@@ -58,7 +57,11 @@ const Home = () => {
 		<>
 			<div className='App'>
 				<Background />
-				<Header isChecked={isChecked} picQuality={picQuality} />
+				<Header
+					isChecked={isChecked}
+					picQuality={picQuality}
+					picDate={picDate}
+				/>
 				<Picture
 					picDate={picDate}
 					hdurl={picOfTheDay.hdurl}

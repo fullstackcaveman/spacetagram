@@ -9,7 +9,7 @@ import {
 import PictureSelector from './PictureSelector';
 import logo from '../../images/spacetagram-logo.png';
 
-const Header = ({ isChecked, picDate, setPicDate, picQuality }) => {
+const Header = ({ isChecked, picDate, picQuality }) => {
 	return (
 		<MainHeader as='header' color='red' inverted>
 			<div className='header-content'>
@@ -20,7 +20,7 @@ const Header = ({ isChecked, picDate, setPicDate, picQuality }) => {
 					</div>
 				</Link>
 				<div className='search-field'>
-					<PictureSelector search={new Date()} />
+					<PictureSelector search={picDate} />
 
 					<div className='high-def'>
 						<Popup

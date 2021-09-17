@@ -9,18 +9,12 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const CustomPotd = ({ match }) => {
-	// const history = useHistory();
 	const searchDate = match.params.date;
-	// const searchDate = history.location.pathname.slice(1, 11);
-
-	console.log(match.params.date);
-
 	const [picOfTheDay, setPicOfTheDay] = useState({});
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
 	const [isChecked, setIsChecked] = useState(false);
-	// eslint-disable-next-line
-	const [picDate, setPicDate] = useState(new Date(searchDate));
+	const picDate = new Date(`${searchDate}T00:00:00`);
 
 	useEffect(() => {
 		const getPicOfTheDay = () => {
@@ -70,7 +64,6 @@ const CustomPotd = ({ match }) => {
 					isChecked={isChecked}
 					picQuality={picQuality}
 					picDate={picDate}
-					setPicDate={setPicDate}
 				/>
 				<Picture
 					picDate={picDate}
