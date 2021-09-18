@@ -11,7 +11,12 @@ const LikedPicCard = (props) => {
 
 	return (
 		<Card>
-			<Image src={likedPic.image} />
+			{likedPic.mediaType === 'video' ? (
+				<Image src={likedPic.thumbs} />
+			) : (
+				<Image src={likedPic.image} />
+			)}
+
 			<Card.Content textAlign='center'>
 				<Card.Header className='card-pic-title'>{likedPic.title}</Card.Header>
 			</Card.Content>
