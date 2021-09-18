@@ -638,5 +638,27 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
     margin-bottom: 20px;
   }
 }
+.saved-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.saved-cards-container .ui.header {
+  font-size: 3rem;
+  color: #f72700;
+  font-family: "Billion-Dreams", sans-serif;
+  margin-bottom: 50px;
+}
+.saved-cards-container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.saved-cards-container .cards .ui.card {
+  margin: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */

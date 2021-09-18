@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import {
 	Button,
@@ -35,6 +36,42 @@ const Picture = (props) => {
 	const [totalLikes, setTotalLikes] = useState(2048);
 	const [openModal, setOpenModal] = useState(false);
 
+	Storage.prototype.getArray = function (arrayName) {
+		let thisArray = [];
+		const fetchArrayObj = this.getItem(arrayName);
+
+		if (typeof fetchArrayObj !== 'undefined') {
+			if (fetchArrayObj !== null) {
+				thisArray = JSON.parse(fetchArrayObj);
+			}
+		}
+		return thisArray;
+	};
+
+	Storage.prototype.pushArrayItem = function (arrayName, arrayItem) {
+		let existingArray = this.getArray(arrayName);
+		existingArray.push(arrayItem);
+		this.setItem(arrayName, JSON.stringify(existingArray));
+	};
+
+	Storage.prototype.popArrayItem = function (arrayName) {
+		let arrayItem = {};
+		let existingArray = this.getArray(arrayName);
+		if (existingArray.length > 0) {
+			arrayItem = existingArray.pop();
+			this.setItem(arrayName, JSON.stringify(existingArray));
+		}
+		return arrayItem;
+	};
+
+	Storage.prototype.deleteArrayItem = function (arrayName, itemTitle) {
+		let existingArray = this.getArray(arrayName);
+		const index = existingArray.findIndex((item) => item.title === itemTitle);
+		existingArray.splice(index, 1);
+		console.log(existingArray);
+		this.setItem(arrayName, JSON.stringify(existingArray));
+	};
+
 	useEffect(() => {
 		const stickyLikes = localStorage.getItem(title);
 
@@ -46,15 +83,23 @@ const Picture = (props) => {
 		}
 	}, [title]);
 
+	useEffect(() => {
+		if (!localStorage.getItem('userPics')) {
+			localStorage.setItem('userPics', JSON.stringify([]));
+		}
+	}, []);
+
 	const setLocalStorage = (element) => {
 		if (isLiked) {
 			setTotalLikes(totalLikes - 1);
 			setIsLiked(false);
 			localStorage.removeItem(element.title);
+			localStorage.deleteArrayItem('userPics', title);
 		}
 		if (!isLiked) {
 			setTotalLikes(totalLikes + 1);
 			setIsLiked(true);
+			localStorage.pushArrayItem('userPics', props);
 			localStorage.setItem(element.title, ['true', totalLikes + 1]);
 		}
 	};
@@ -104,7 +149,7 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
-							{/* <Link to='/liked-pics'>
+							<Link to='/liked-pics'>
 								<Button
 									color='blue'
 									className='glow-on-hover'
@@ -112,7 +157,7 @@ const Picture = (props) => {
 								>
 									Show Liked Pics
 								</Button>
-							</Link> */}
+							</Link>
 							<ShareButton showSocials={handleShowSocials} />
 						</div>
 					</Container>

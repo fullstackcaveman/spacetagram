@@ -14,8 +14,6 @@ const Home = () => {
 	const [isChecked, setIsChecked] = useState(false);
 	const picDate = new Date();
 
-	console.log(picOfTheDay);
-
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
