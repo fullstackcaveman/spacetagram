@@ -35,6 +35,7 @@ const Picture = (props) => {
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(2048);
 	const [openModal, setOpenModal] = useState(false);
+	const [disabled, setDisabled] = useState(true);
 
 	Storage.prototype.getArray = function (arrayName) {
 		let thisArray = [];
@@ -83,11 +84,19 @@ const Picture = (props) => {
 		}
 	}, [title]);
 
+	const checkLikedLen = JSON.parse(localStorage.getItem('userPics'));
+
 	useEffect(() => {
 		if (!localStorage.getItem('userPics')) {
 			localStorage.setItem('userPics', JSON.stringify([]));
 		}
-	}, []);
+
+		if (JSON.parse(localStorage.getItem('userPics')).length > 0) {
+			setDisabled(false);
+		} else {
+			setDisabled(true);
+		}
+	}, [checkLikedLen]);
 
 	const setLocalStorage = (element) => {
 		if (isLiked) {
@@ -149,15 +158,22 @@ const Picture = (props) => {
 									{totalLikes.toLocaleString()}
 								</Label>
 							</Button>
-							<Link to='/liked-pics'>
-								<Button
-									color='blue'
-									className='glow-on-hover'
-									id='show-liked-pics'
-								>
-									Show Liked Pics
-								</Button>
-							</Link>
+
+							{!disabled ? (
+								<Link to='/liked-pics'>
+									<Button
+										color='blue'
+										className='glow-on-hover'
+										id='show-liked-pics'
+										disabled={disabled}
+									>
+										Show Liked Pics
+									</Button>
+								</Link>
+							) : (
+								<></>
+							)}
+
 							<ShareButton showSocials={handleShowSocials} />
 						</div>
 					</Container>
