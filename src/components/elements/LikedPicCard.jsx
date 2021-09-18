@@ -20,7 +20,11 @@ const LikedPicCard = (props) => {
 					<Button basic color='green' onClick={handleGoToPhoto}>
 						Go To Photo
 					</Button>
-					<Button basic color='red' onClick={handleDelete}>
+					<Button
+						basic
+						color='red'
+						onClick={() => handleDelete(likedPic.title)}
+					>
 						Delete Photo
 					</Button>
 				</div>

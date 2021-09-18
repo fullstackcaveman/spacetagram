@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Background from './elements/Background';
 import Header from './elements/Header';
 import Footer from './elements/Footer';
@@ -6,17 +7,38 @@ import { Container, Header as Banner } from 'semantic-ui-react';
 import LikedPicCard from './elements/LikedPicCard';
 
 const LikedPics = () => {
+	const history = useHistory();
 	const [likedPics, setLikedPics] = useState([]);
+
+	Storage.prototype.deleteArrayItem = function (arrayName, itemTitle) {
+		let existingArray = this.getArray(arrayName);
+		const index = existingArray.findIndex((item) => item.title === itemTitle);
+		existingArray.splice(index, 1);
+		console.log(existingArray);
+		this.setItem(arrayName, JSON.stringify(existingArray));
+	};
+
+	const handleEmptyLikes = () => {
+		console.log(likedPics.length);
+		if (likedPics.length - 1 === 0) {
+			history.push('/');
+		}
+	};
+
+	const handleDelete = (title) => {
+		localStorage.deleteArrayItem('userPics', title);
+		localStorage.removeItem(title);
+
+		setLikedPics(JSON.parse(localStorage.getItem('userPics')));
+
+		handleEmptyLikes();
+	};
 
 	useEffect(() => {
 		const savedPics = JSON.parse(localStorage.getItem('userPics'));
 
 		setLikedPics(savedPics);
-	}, []);
-
-	const handleDelete = () => {
-		console.log('handle delete called');
-	};
+	}, [history, likedPics.length]);
 
 	return (
 		<div>
