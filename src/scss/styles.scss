@@ -6,6 +6,19 @@
 @import 'twinkling';
 @import 'glowOnHover';
 
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	flex: 1 0 auto;
+}
+
 .flex-row {
 	display: flex;
 	justify-content: center;
@@ -56,16 +69,6 @@
 	form {
 		.field {
 			padding: 5px;
-			// label {
-			// 	color: white;
-
-			// 	&::before {
-			// 		color: white;
-			// 	}
-			// 	&::after {
-			// 		color: white;
-			// 	}
-			// }
 		}
 	}
 }
@@ -113,6 +116,8 @@
 				align-items: center;
 				margin-bottom: 10px;
 
+				flex-shrink: 0;
+
 				h2 {
 					font-size: 1rem;
 				}
@@ -123,6 +128,19 @@
 
 #show-liked-pics {
 	margin: 0 5px;
+}
+
+#liked-pics {
+	h1 {
+		color: $logo-color;
+		font-family: $logo-font;
+		font-weight: 100;
+		font-size: 3.5rem;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		padding: 0 10px;
+	}
 }
 
 // Date Picker
@@ -231,6 +249,13 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 		}
 	}
 
+	.picture-otd {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
 	.footer-top {
 		.photo-copyright {
 			flex-direction: column;
@@ -242,28 +267,31 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 	}
 }
 
-.saved-cards-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-
-	.ui.header {
-		font-size: 3rem;
-		color: $logo-color;
-		font-family: $logo-font;
-		margin-bottom: 50px;
-	}
-
-	.cards {
+.cards-main-container {
+	.saved-cards-container {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		padding: 20px;
+		height: 100%;
 
-		.ui.card {
-			margin: 20px;
+		.ui.header {
+			font-size: 3rem;
+			color: $logo-color;
+			font-family: $logo-font;
+			margin-bottom: 50px;
+		}
+
+		.cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+
+			.ui.card {
+				margin: 20px;
+			}
 		}
 	}
 }

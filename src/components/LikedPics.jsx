@@ -39,7 +39,7 @@ const LikedPics = () => {
 	}, [history, likedPics.length]);
 
 	return (
-		<div>
+		<div id='liked-pics'>
 			<Header />
 			<Banner as='h1'>Your Saved Photos</Banner>
 			<div className='cards-main-container'>
