@@ -53,27 +53,21 @@ const Home = () => {
 	};
 
 	return (
-		<>
-			<div className='App'>
-				<Header
-					isChecked={isChecked}
-					picQuality={picQuality}
-					picDate={picDate}
-				/>
-				<Picture
-					picDate={picDate}
-					mediaType={picOfTheDay.media_type}
-					thumbs={picOfTheDay.thumbnail_url}
-					hdurl={picOfTheDay.hdurl}
-					title={picOfTheDay.title}
-					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
-					description={picOfTheDay.explanation}
-					copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
-					date={picOfTheDay.date}
-					loading={loading}
-				/>
-			</div>
-		</>
+		<div className='App'>
+			<Header isChecked={isChecked} picQuality={picQuality} picDate={picDate} />
+			<Picture
+				picDate={picDate}
+				mediaType={picOfTheDay.media_type}
+				thumbs={picOfTheDay.thumbnail_url}
+				hdurl={picOfTheDay.hdurl}
+				title={picOfTheDay.title}
+				image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
+				description={picOfTheDay.explanation}
+				copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
+				date={picOfTheDay.date}
+				loading={loading}
+			/>
+		</div>
 	);
 };
 
