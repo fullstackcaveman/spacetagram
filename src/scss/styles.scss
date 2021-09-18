@@ -228,6 +228,35 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 	align-items: center;
 }
 
+.cards-main-container {
+	.saved-cards-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		height: 100%;
+
+		.ui.header {
+			font-size: 3rem;
+			color: $logo-color;
+			font-family: $logo-font;
+			margin-bottom: 50px;
+		}
+
+		.cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+
+			.ui.card {
+				margin: 20px;
+			}
+		}
+	}
+}
+
 @media (max-width: 750px) {
 	.header-content {
 		flex-direction: column;
@@ -265,33 +294,12 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 			margin-bottom: 20px;
 		}
 	}
-}
+	#modal {
+		width: 200px;
+	}
 
-.cards-main-container {
-	.saved-cards-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 20px;
-		height: 100%;
-
-		.ui.header {
-			font-size: 3rem;
-			color: $logo-color;
-			font-family: $logo-font;
-			margin-bottom: 50px;
-		}
-
-		.cards {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-
-			.ui.card {
-				margin: 20px;
-			}
-		}
+	body > div.ui.page.modals.dimmer.transition.visible.active {
+		width: 100vw;
+		height: 100vh;
 	}
 }

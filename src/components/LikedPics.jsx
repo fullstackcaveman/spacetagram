@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Background from './elements/Background';
 import Header from './elements/Header';
 import Footer from './elements/Footer';
 import { Container, Header as Banner } from 'semantic-ui-react';
@@ -63,7 +62,6 @@ const LikedPics = () => {
 					</footer>
 				</Container>
 			</div>
-			<Background />
 		</div>
 	);
 };

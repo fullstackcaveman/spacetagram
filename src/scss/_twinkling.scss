@@ -79,3 +79,13 @@
 		animation: move-background $background-animation-time linear infinite;
 	}
 }
+
+@media (max-width: 750px) {
+	.background-container {
+		.twinkling {
+			width: 0;
+			background-size: 0 0;
+			background: none;
+		}
+	}
+}

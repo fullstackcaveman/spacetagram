@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 // import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
-import Background from '../components/elements/Background';
 import Header from './elements/Header';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -78,7 +77,6 @@ const CustomPotd = ({ match }) => {
 					loading={loading}
 				/>
 			</div>
-			<Background />
 		</>
 	);
 };

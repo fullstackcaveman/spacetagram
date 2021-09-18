@@ -416,6 +416,13 @@ template {
   animation: move-background 50s linear infinite;
 }
 
+@media (max-width: 750px) {
+  .background-container .twinkling {
+    width: 0;
+    background-size: 0 0;
+    background: none;
+  }
+}
 .glow-on-hover {
   border: none;
   outline: none;
@@ -641,6 +648,30 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
   align-items: center;
 }
 
+.cards-main-container .saved-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+}
+.cards-main-container .saved-cards-container .ui.header {
+  font-size: 3rem;
+  color: #f72700;
+  font-family: "Billion-Dreams", sans-serif;
+  margin-bottom: 50px;
+}
+.cards-main-container .saved-cards-container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.cards-main-container .saved-cards-container .cards .ui.card {
+  margin: 20px;
+}
+
 @media (max-width: 750px) {
   .header-content {
     flex-direction: column;
@@ -671,29 +702,15 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
     text-align: center;
     margin-bottom: 20px;
   }
-}
-.cards-main-container .saved-cards-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  height: 100%;
-}
-.cards-main-container .saved-cards-container .ui.header {
-  font-size: 3rem;
-  color: #f72700;
-  font-family: "Billion-Dreams", sans-serif;
-  margin-bottom: 50px;
-}
-.cards-main-container .saved-cards-container .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.cards-main-container .saved-cards-container .cards .ui.card {
-  margin: 20px;
+
+  #modal {
+    width: 200px;
+  }
+
+  body > div.ui.page.modals.dimmer.transition.visible.active {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
