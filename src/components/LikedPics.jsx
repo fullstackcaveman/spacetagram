@@ -14,12 +14,10 @@ const LikedPics = () => {
 		let existingArray = this.getArray(arrayName);
 		const index = existingArray.findIndex((item) => item.title === itemTitle);
 		existingArray.splice(index, 1);
-		console.log(existingArray);
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
 
 	const handleEmptyLikes = () => {
-		console.log(likedPics.length);
 		if (likedPics.length - 1 === 0) {
 			history.push('/');
 		}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {
 	Form,
 	Image,
@@ -10,6 +10,8 @@ import PictureSelector from './PictureSelector';
 import logo from '../../images/spacetagram-logo.png';
 
 const Header = ({ isChecked, picDate, picQuality }) => {
+	const history = useHistory();
+
 	return (
 		<MainHeader as='header' color='red' inverted>
 			<div className='header-content'>
@@ -22,24 +24,28 @@ const Header = ({ isChecked, picDate, picQuality }) => {
 				<div className='search-field'>
 					<PictureSelector search={picDate} />
 
-					<div className='high-def'>
-						<Popup
-							trigger={
-								<Form inverted>
-									<Form.Field
-										control={Checkbox}
-										checked={isChecked}
-										label={{ children: 'Display HD Photos' }}
-										onClick={picQuality}
-									/>
-								</Form>
-							}
-							content='Check to display High-Res photos'
-							inverted
-							position='bottom left'
-							size='mini'
-						/>
-					</div>
+					{history.location.pathname === '/liked-pics' ? (
+						<></>
+					) : (
+						<div className='high-def'>
+							<Popup
+								trigger={
+									<Form inverted>
+										<Form.Field
+											control={Checkbox}
+											checked={isChecked}
+											label={{ children: 'Display HD Photos' }}
+											onClick={picQuality}
+										/>
+									</Form>
+								}
+								content='Check to display High-Res photos'
+								inverted
+								position='bottom left'
+								size='mini'
+							/>
+						</div>
+					)}
 				</div>
 			</div>
 		</MainHeader>
