@@ -69,7 +69,6 @@ const Picture = (props) => {
 		let existingArray = this.getArray(arrayName);
 		const index = existingArray.findIndex((item) => item.title === itemTitle);
 		existingArray.splice(index, 1);
-		console.log(existingArray);
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
 
