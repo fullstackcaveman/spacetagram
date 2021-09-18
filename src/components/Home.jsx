@@ -56,7 +56,6 @@ const Home = () => {
 	return (
 		<>
 			<div className='App'>
-				<Background />
 				<Header
 					isChecked={isChecked}
 					picQuality={picQuality}
@@ -75,6 +74,7 @@ const Home = () => {
 					loading={loading}
 				/>
 			</div>
+			<Background />
 		</>
 	);
 };

@@ -59,7 +59,6 @@ const CustomPotd = ({ match }) => {
 	return (
 		<>
 			<div className='App'>
-				<Background />
 				<Header
 					isChecked={isChecked}
 					picQuality={picQuality}
@@ -79,6 +78,7 @@ const CustomPotd = ({ match }) => {
 					loading={loading}
 				/>
 			</div>
+			<Background />
 		</>
 	);
 };

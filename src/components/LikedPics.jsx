@@ -40,7 +40,6 @@ const LikedPics = () => {
 
 	return (
 		<div>
-			<Background />
 			<Header />
 			<Banner as='h1'>Your Saved Photos</Banner>
 			<div className='cards-main-container'>
@@ -64,6 +63,7 @@ const LikedPics = () => {
 					</footer>
 				</Container>
 			</div>
+			<Background />
 		</div>
 	);
 };
