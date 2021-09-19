@@ -44,7 +44,7 @@ const LikedPics = () => {
 	return (
 		<div id='liked-pics'>
 			<Header />
-			<Banner as='h1'>Your Saved Photos</Banner>
+			<Banner as='h1'>Your Liked Photos</Banner>
 			<div className='cards-main-container'>
 				<section className='saved-cards-container'>
 					<div className='cards'>
