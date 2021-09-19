@@ -11,6 +11,11 @@ Users can browse pictures by date, like and share pictures using an easy-to-use 
 
 [![Spacetagram](https://res.cloudinary.com/fullstackcaveman/image/upload/v1632077648/Spacetagram/spacetagram-screenshot_yqo6iy.png)](https://nasa-potd.fullstackcaveman.com)
 
+## Share Photos
+Users can share photos with a handy share function.
+
+[![Spacetagram Share Photos](https://res.cloudinary.com/fullstackcaveman/image/upload/v1632079273/Spacetagram/spacetagram-share-photo_g4n8ue.png)](https://fullstackcaveman.com)
+
 ## Liked Photos Page
 Users can see all of the photos that they have "liked" and delete unwanted ones as well as go directly to the saved photo for more information.
 
