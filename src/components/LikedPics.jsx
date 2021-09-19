@@ -9,6 +9,7 @@ const LikedPics = () => {
 	const history = useHistory();
 	const [likedPics, setLikedPics] = useState([]);
 
+	// localStorage helper function
 	Storage.prototype.deleteArrayItem = function (arrayName, itemTitle) {
 		let existingArray = this.getArray(arrayName);
 		const index = existingArray.findIndex((item) => item.title === itemTitle);
@@ -16,12 +17,14 @@ const LikedPics = () => {
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
 
+	// If user deletes all of their liked pics, they are redirected to home page
 	const handleEmptyLikes = () => {
 		if (likedPics.length - 1 === 0) {
 			history.push('/');
 		}
 	};
 
+	// Uses helper funtion to delete the liked picture
 	const handleDelete = (title) => {
 		localStorage.deleteArrayItem('userPics', title);
 		localStorage.removeItem(title);
@@ -31,6 +34,7 @@ const LikedPics = () => {
 		handleEmptyLikes();
 	};
 
+	// Sets user's liked pics from localStorage
 	useEffect(() => {
 		const savedPics = JSON.parse(localStorage.getItem('userPics'));
 

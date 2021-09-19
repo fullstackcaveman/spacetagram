@@ -4,6 +4,7 @@ import Picture from '../components/PictureOfTheDay';
 import Header from './elements/Header';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
+// To protect personal API key
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
+				// Added thumbs=true to get the thumbnail if the daily "pic" is a video
 				.get(`${BASE_URL}?api_key=${API_KEY}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
@@ -28,6 +30,7 @@ const Home = () => {
 		getPicOfTheDay();
 	}, []);
 
+	// stickyDef is used to change the image url to hdurl if the user wants to see the High Definition version of the picture.
 	useEffect(() => {
 		const stickyDef = localStorage.getItem('high-def');
 
@@ -40,6 +43,7 @@ const Home = () => {
 		}
 	}, []);
 
+	// Handles the HD photos checkbox state
 	const picQuality = () => {
 		if (highDef) {
 			setHighDef(!highDef);

@@ -1,13 +1,9 @@
 import { Button, Header, Modal } from 'semantic-ui-react';
 import SharePicture from './SharePicture';
 
-const ShareModal = ({
-	description,
-	hdurl,
-	openModal,
-	pathName,
-	setOpenModal,
-}) => {
+const ShareModal = (props) => {
+	const { description, hdurl, openModal, pathName, setOpenModal } = props;
+
 	return (
 		<div className='modal-container'>
 			<Modal dimmer='blurring' open={openModal} id='modal'>

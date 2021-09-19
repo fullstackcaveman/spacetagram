@@ -15,7 +15,9 @@ import Footer from './elements/Footer';
 import ShareButton from './elements/ShareButton';
 import ShareModal from './elements/ShareModal';
 
+// If there are 4 or less props, I'll destructure them where "props" is.
 const Picture = (props) => {
+	// I prefer to destructure the following way when the first line of the component function declaration breaks to a new line. I like to see the declaration on one line for better readability.
 	const {
 		copyright,
 		date,
@@ -30,13 +32,17 @@ const Picture = (props) => {
 
 	const history = useHistory();
 
+	// Used to set in initial likes on an unliked photo 1,000 to 10,000
+	const rndNum = Math.floor(Math.random() * (10000 - 1000) + 1000);
+
 	// user likes would be set in a database to keep localStorage from getting too bloated
 	const [isLiked, setIsLiked] = useState();
 	// totalLikes state would come from a database in a full production app
-	const [totalLikes, setTotalLikes] = useState(2048);
+	const [totalLikes, setTotalLikes] = useState(rndNum);
 	const [openModal, setOpenModal] = useState(false);
 	const [disabled, setDisabled] = useState(true);
 
+	// Helper functions that make working with localStorage easier
 	Storage.prototype.getArray = function (arrayName) {
 		let thisArray = [];
 		const fetchArrayObj = this.getItem(arrayName);
@@ -55,48 +61,45 @@ const Picture = (props) => {
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
 
-	Storage.prototype.popArrayItem = function (arrayName) {
-		let arrayItem = {};
-		let existingArray = this.getArray(arrayName);
-		if (existingArray.length > 0) {
-			arrayItem = existingArray.pop();
-			this.setItem(arrayName, JSON.stringify(existingArray));
-		}
-		return arrayItem;
-	};
-
 	Storage.prototype.deleteArrayItem = function (arrayName, itemTitle) {
 		let existingArray = this.getArray(arrayName);
 		const index = existingArray.findIndex((item) => item.title === itemTitle);
 		existingArray.splice(index, 1);
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
+	// End localStorage helper functions
 
 	useEffect(() => {
+		// Assigns localStorage key={title} to variable
 		const stickyLikes = localStorage.getItem(title);
 
 		if (!stickyLikes) {
+			// Sets isLiked to false if there is no localStorage of key={title}
 			setIsLiked(false);
 		} else if (stickyLikes.split(',')[0] === 'true') {
+			// Parses out element[1] (total likes) from localStorage as an integer
 			setTotalLikes(parseInt(stickyLikes.split(',')[1]));
 			setIsLiked(true);
 		}
 	}, [title]);
 
-	const checkLikedLen = JSON.parse(localStorage.getItem('userPics'));
+	// Sets the user's liked pics from localStorage to variable
+	const userLikedPics = JSON.parse(localStorage.getItem('userPics'));
 
 	useEffect(() => {
 		if (!localStorage.getItem('userPics')) {
 			localStorage.setItem('userPics', JSON.stringify([]));
 		}
 
+		// Disables (hides) Show Liked Pics button if there are no liked pics
 		if (JSON.parse(localStorage.getItem('userPics')).length > 0) {
 			setDisabled(false);
 		} else {
 			setDisabled(true);
 		}
-	}, [checkLikedLen]);
+	}, [userLikedPics]);
 
+	// Function for updating a picture's total likes
 	const setLocalStorage = (element) => {
 		if (isLiked) {
 			setTotalLikes(totalLikes - 1);
@@ -112,12 +115,13 @@ const Picture = (props) => {
 		}
 	};
 
+	// Opens/Closes share modal
 	const handleShowSocials = () => {
 		setOpenModal(!openModal);
 	};
 
 	return (
-		<section className='picture-otd'>
+		<main className='picture-otd'>
 			{loading ? (
 				<Loader size='huge' inverted active>
 					Contacting NASA...
@@ -210,7 +214,7 @@ const Picture = (props) => {
 					/>
 				</Container>
 			)}
-		</section>
+		</main>
 	);
 };
 

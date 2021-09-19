@@ -1,9 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react';
 
-const LikedPicCard = (props) => {
+const LikedPicCard = ({ likedPic, handleDelete }) => {
 	const history = useHistory();
-	const { likedPic, handleDelete } = props;
 
 	const handleGoToPhoto = () => {
 		history.push(`/${likedPic.date}`);

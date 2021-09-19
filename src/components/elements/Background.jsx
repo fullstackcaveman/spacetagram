@@ -1,3 +1,5 @@
+// Used for the animated stars background
+
 const Background = () => {
 	return (
 		<div className='background-container'>

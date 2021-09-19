@@ -21,14 +21,9 @@ import {
 	WhatsappIcon,
 } from 'react-share';
 
-const SharePicture = ({
-	description,
-	summary,
-	source,
-	title,
-	hdurl,
-	pathName,
-}) => {
+const SharePicture = (props) => {
+	const { description, summary, source, title, hdurl, pathName } = props;
+
 	const shareUrl = `https://nasa-potd.fullstackcaveman.com${pathName}`;
 
 	return (

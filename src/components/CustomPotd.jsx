@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-// import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Picture from '../components/PictureOfTheDay';
 import Header from './elements/Header';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
+// To protect personal API key
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const CustomPotd = ({ match }) => {
@@ -18,6 +18,7 @@ const CustomPotd = ({ match }) => {
 	useEffect(() => {
 		const getPicOfTheDay = () => {
 			axios
+				// Fetches the selected date's picture
 				.get(`${BASE_URL}?api_key=${API_KEY}&date=${searchDate}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
@@ -31,6 +32,7 @@ const CustomPotd = ({ match }) => {
 		setLoading(false);
 	}, [searchDate]);
 
+	// stickyDef is used to change the image url to hdurl if the user wants to see the High Definition version of the picture.
 	useEffect(() => {
 		const stickyDef = localStorage.getItem('high-def');
 
@@ -43,6 +45,7 @@ const CustomPotd = ({ match }) => {
 		}
 	}, []);
 
+	// Handles the HD photos checkbox state
 	const picQuality = () => {
 		if (highDef) {
 			setHighDef(!highDef);

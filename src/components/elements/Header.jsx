@@ -14,7 +14,7 @@ const Header = ({ isChecked, picDate, picQuality }) => {
 
 	return (
 		<MainHeader as='header' color='red' inverted>
-			<div className='header-content'>
+			<nav className='header-content'>
 				<Link to='/' className='header-logo'>
 					<Image src={logo} size='tiny' alt='spacetagram logo' />
 					<div className='spacetagram'>
@@ -47,7 +47,7 @@ const Header = ({ isChecked, picDate, picQuality }) => {
 						</div>
 					)}
 				</div>
-			</div>
+			</nav>
 		</MainHeader>
 	);
 };

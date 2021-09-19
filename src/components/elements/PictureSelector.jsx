@@ -10,6 +10,7 @@ const PictureSelector = ({ search }) => {
 
 	const [startDate, setStartDate] = useState(search);
 
+	// Function that formats the selected date to a proper API request
 	const formatDate = (input) => {
 		const formattedDate = new Date(input);
 		const month = formattedDate.getMonth() + 1;
