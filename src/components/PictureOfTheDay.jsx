@@ -16,7 +16,7 @@ import ShareButton from './elements/ShareButton';
 import ShareModal from './elements/ShareModal';
 
 // If there are 4 or less props, I'll destructure them where "props" is.
-const Picture = (props) => {
+const PictureOfTheDay = (props) => {
 	// I prefer to destructure the following way when the first line of the component function declaration breaks to a new line. I like to see the declaration on one line for better readability.
 	const {
 		copyright,
@@ -32,10 +32,10 @@ const Picture = (props) => {
 
 	const history = useHistory();
 
-	// Used to set in initial likes on an unliked photo 1,000 to 10,000
+	// Used to set initial likes on an unliked photo. Range is 1,000 to 10,000
 	const rndNum = Math.floor(Math.random() * (10000 - 1000) + 1000);
 
-	// user likes would be set in a database to keep localStorage from getting too bloated
+	// User likes would be set in a database to keep localStorage from getting too bloated
 	const [isLiked, setIsLiked] = useState();
 	// totalLikes state would come from a database in a full production app
 	const [totalLikes, setTotalLikes] = useState(rndNum);
@@ -218,4 +218,4 @@ const Picture = (props) => {
 	);
 };
 
-export default Picture;
+export default PictureOfTheDay;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Picture from '../components/PictureOfTheDay';
 import Header from './elements/Header';
+import PictureOfTheDay from '../components/PictureOfTheDay';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 // To protect personal API key
@@ -59,7 +59,7 @@ const Home = () => {
 	return (
 		<div className='App'>
 			<Header isChecked={isChecked} picQuality={picQuality} picDate={picDate} />
-			<Picture
+			<PictureOfTheDay
 				picDate={picDate}
 				mediaType={picOfTheDay.media_type}
 				thumbs={picOfTheDay.thumbnail_url}
