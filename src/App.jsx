@@ -48,9 +48,10 @@ function App() {
 				position='left center'
 				hoverable
 				pinned
+				inverted
 			>
 				<Header as='h4'>Feeling Lucky?</Header>
-				<Button color='teal' onClick={handleClick}>
+				<Button color='orange' onClick={handleClick}>
 					See Random Picture
 				</Button>
 			</Popup>

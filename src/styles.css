@@ -596,7 +596,7 @@ body {
   font-size: 1.1rem;
 }
 
-#root > div > div.App > header > div > div.search-field > div > form > div > div > div > div > input {
+#root > div > div.App > header > nav > div > div.search-form > form > div > div > div > div > input {
   cursor: pointer;
   width: 100px;
   text-align: center;
