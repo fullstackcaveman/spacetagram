@@ -257,6 +257,23 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 	}
 }
 
+#martian {
+	position: fixed;
+	bottom: 35%;
+	right: -50px;
+	transform: rotate(-40deg);
+	animation: martian 3s;
+}
+
+@keyframes martian {
+	0% {
+		right: -400px;
+	}
+	100% {
+		right: -50px;
+	}
+}
+
 @media (max-width: 750px) {
 	.header-content {
 		flex-direction: column;
@@ -302,11 +319,4 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 		width: 100vw;
 		height: 100vh;
 	}
-}
-
-#martian {
-	position: fixed;
-	bottom: 30%;
-	right: -50px;
-	transform: rotate(-40deg);
 }
