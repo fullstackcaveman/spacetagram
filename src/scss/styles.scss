@@ -303,3 +303,11 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 		height: 100vh;
 	}
 }
+
+#martian {
+	position: fixed;
+	bottom: 30%;
+	right: -50px;
+	transform: rotate(-40deg);
+	opacity: 90%;
+}
