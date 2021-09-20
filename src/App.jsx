@@ -46,6 +46,7 @@ function App() {
 			<Popup
 				trigger={<Image src={martian} id='martian' />}
 				position='left center'
+				offset={[-10, -25]}
 				hoverable
 				pinned
 				inverted
