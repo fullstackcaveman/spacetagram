@@ -9,6 +9,24 @@ const LikedPics = () => {
 	const history = useHistory();
 	const [likedPics, setLikedPics] = useState([]);
 
+	// Variables to set random search when user deletes their last liked photo
+	const thisYear = new Date().getFullYear();
+	const randomYear = Math.floor(Math.random() * (thisYear - 1996) + 1996);
+	const randomMonth = Math.floor(Math.random() * (12 - 1) + 1).toLocaleString(
+		'en-US',
+		{
+			minimumIntegerDigits: 2,
+			useGrouping: false,
+		}
+	);
+	const randomDay = Math.floor(Math.random() * (28 - 1) + 1).toLocaleString(
+		'en-US',
+		{
+			minimumIntegerDigits: 2,
+			useGrouping: false,
+		}
+	);
+
 	// localStorage helper function
 	Storage.prototype.deleteArrayItem = function (arrayName, itemTitle) {
 		let existingArray = this.getArray(arrayName);
@@ -17,10 +35,10 @@ const LikedPics = () => {
 		this.setItem(arrayName, JSON.stringify(existingArray));
 	};
 
-	// If user deletes all of their liked pics, they are redirected to home page
+	// If user deletes all of their liked pics, they are redirected to a random picture
 	const handleEmptyLikes = () => {
-		if (likedPics.length - 1 === 0) {
-			history.push('/');
+		if (likedPics.length - 1 < 1) {
+			history.push(`/${randomYear}-${randomMonth}-${randomDay}`);
 		}
 	};
 
