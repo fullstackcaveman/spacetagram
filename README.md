@@ -1,4 +1,4 @@
-<a href="https://nasa-potd.fullstackcaveman.com" target="_blank">
+<a href="https://nasa-potd.fullstackcaveman.com">
   <img src="https://res.cloudinary.com/fullstackcaveman/image/upload/v1632077441/Spacetagram/spacetagram-logo_plhjbl.png" alt="Spacetagram Logo" title="Go To Spacetagram" align="right" height="70" />
 </a>
 
