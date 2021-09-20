@@ -50,7 +50,7 @@ function App() {
 				pinned
 				inverted
 			>
-				<Header as='h4'>Feeling Lucky?</Header>
+				<Header as='h4'>Feeling lucky, earthling?</Header>
 				<Button color='orange' onClick={handleClick}>
 					See Random Picture
 				</Button>
