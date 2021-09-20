@@ -4,7 +4,7 @@
 
 # Spacetagram - Nasa Picture of the Day App
 
-:star: Star me on GitHub — it motivates me a lot!
+:star: Star me on GitHub — Its great motivatation for creating new things!
 
 [Spacetagram](https://nasa-potd.fullstackcaveman.com) is a picture of the day app that fetches the Nasa Picture of the Day from their APOD API.
 Users can browse pictures by date, like and share pictures using an easy-to-use UI.
