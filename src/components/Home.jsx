@@ -21,13 +21,18 @@ const Home = () => {
 				.get(`${BASE_URL}?api_key=${API_KEY}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
-					setLoading(false);
+					// setLoading(false);
 				})
 				.catch((err) => {
 					console.log(err);
 				});
 		};
 		getPicOfTheDay();
+		const loadingTimeout = setTimeout(() => setLoading(false), 1000);
+
+		return () => {
+			clearTimeout(loadingTimeout);
+		};
 	}, []);
 
 	// stickyDef is used to change the image url to hdurl if the user wants to see the High Definition version of the picture.

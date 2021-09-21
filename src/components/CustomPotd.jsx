@@ -22,14 +22,17 @@ const CustomPotd = ({ match }) => {
 				.get(`${BASE_URL}?api_key=${API_KEY}&date=${searchDate}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
-					setLoading(false);
 				})
 				.catch((err) => {
 					console.log(err);
 				});
 		};
 		getPicOfTheDay();
-		setLoading(false);
+		const loadingTimeout = setTimeout(() => setLoading(false), 1000);
+
+		return () => {
+			clearTimeout(loadingTimeout);
+		};
 	}, [searchDate]);
 
 	// stickyDef is used to change the image url to hdurl if the user wants to see the High Definition version of the picture.
