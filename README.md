@@ -9,7 +9,7 @@
 [Spacetagram](https://nasa-potd.fullstackcaveman.com) is a picture of the day app that fetches the Nasa Picture of the Day from their APOD API.
 Users can browse pictures by date, like and share pictures using an easy-to-use UI.
 
-[![Spacetagram](https://res.cloudinary.com/fullstackcaveman/image/upload/v1632077648/Spacetagram/spacetagram-screenshot_yqo6iy.png)](https://nasa-potd.fullstackcaveman.com)
+[![Spacetagram](https://res.cloudinary.com/fullstackcaveman/image/upload/v1632189024/Spacetagram/spacetagram-screenshot_maxois.png)](https://nasa-potd.fullstackcaveman.com)
 
 ## Share Photos
 Users can share photos with a handy share function.
