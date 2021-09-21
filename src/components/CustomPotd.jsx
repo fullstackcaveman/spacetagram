@@ -28,7 +28,7 @@ const CustomPotd = ({ match }) => {
 				});
 		};
 		getPicOfTheDay();
-		const loadingTimeout = setTimeout(() => setLoading(false), 1000);
+		const loadingTimeout = setTimeout(() => setLoading(false), 1500);
 
 		return () => {
 			clearTimeout(loadingTimeout);

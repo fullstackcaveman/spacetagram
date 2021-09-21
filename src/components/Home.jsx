@@ -21,14 +21,13 @@ const Home = () => {
 				.get(`${BASE_URL}?api_key=${API_KEY}&thumbs=true`)
 				.then((res) => {
 					setPicOfTheDay(res.data);
-					// setLoading(false);
 				})
 				.catch((err) => {
 					console.log(err);
 				});
 		};
 		getPicOfTheDay();
-		const loadingTimeout = setTimeout(() => setLoading(false), 1000);
+		const loadingTimeout = setTimeout(() => setLoading(false), 1500);
 
 		return () => {
 			clearTimeout(loadingTimeout);

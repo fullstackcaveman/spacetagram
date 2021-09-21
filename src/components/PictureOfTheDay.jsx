@@ -14,6 +14,7 @@ import {
 import Footer from './elements/Footer';
 import ShareButton from './elements/ShareButton';
 import ShareModal from './elements/ShareModal';
+import martianRunning from '../images/martian-running.png';
 
 // If there are 4 or less props, I'll destructure them where "props" is.
 const PictureOfTheDay = (props) => {
@@ -124,7 +125,14 @@ const PictureOfTheDay = (props) => {
 		<main className='picture-otd'>
 			{loading ? (
 				<Loader size='huge' inverted active>
-					Contacting NASA...
+					<div className='contacting-nasa'>
+						Contacting NASA...{' '}
+						<Image
+							src={martianRunning}
+							alt='Martian Running'
+							className='running-martian'
+						/>
+					</div>
 				</Loader>
 			) : (
 				<Container className='flex-column'>

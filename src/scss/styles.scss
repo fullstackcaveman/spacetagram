@@ -265,6 +265,16 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 	animation: martian 3s;
 }
 
+#root > div > div.App > main > div > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.running-martian {
+		height: 100px;
+	}
+}
+
 @keyframes martian {
 	0% {
 		right: -400px;
