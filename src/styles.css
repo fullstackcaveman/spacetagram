@@ -560,10 +560,12 @@ body {
   justify-content: space-evenly;
   margin-top: 50px;
   color: #f72700;
+  width: 100%;
 }
 .ui.container footer .photo-copyright {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 .ui.container footer .footer-bottom {
   display: flex;
