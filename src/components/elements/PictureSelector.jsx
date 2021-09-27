@@ -4,11 +4,29 @@ import { Form, Input } from 'semantic-ui-react';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useEffect } from 'react';
 
 const PictureSelector = ({ search }) => {
 	const history = useHistory();
-
 	const [startDate, setStartDate] = useState(search);
+
+	// Sets current random search date in search box
+	useEffect(() => {
+		if (
+			history.location.pathname === '/' ||
+			history.location.pathname === '/liked-pics'
+		) {
+			return;
+		} else {
+			const newUrl = history.location.pathname;
+			const cleanedUrl = newUrl.split('/')[1] + 'T16:00:00';
+			const formattedUrl = new Date(cleanedUrl);
+
+			randomPicUpdater(formattedUrl);
+		}
+
+		// eslint-disable-next-line
+	}, [history.location.pathname]);
 
 	// Function that formats the selected date to a proper API request
 	const formatDate = (input) => {
@@ -30,6 +48,10 @@ const PictureSelector = ({ search }) => {
 				useGrouping: false,
 			})
 		);
+	};
+
+	const randomPicUpdater = (date) => {
+		setStartDate(date);
 	};
 
 	const dateChangeHandler = (date) => {
