@@ -32,10 +32,6 @@ function App() {
 		return history.push(`/${randomYear}-${randomMonth}-${randomDay}`);
 	};
 
-	const handleClick = () => {
-		getRandomDate();
-	};
-
 	return (
 		<div className='App'>
 			<Switch>
@@ -52,7 +48,7 @@ function App() {
 				inverted
 			>
 				<Header as='h4'>Feeling lucky, earthling?</Header>
-				<Button color='orange' onClick={handleClick}>
+				<Button color='orange' onClick={getRandomDate}>
 					See Random Picture
 				</Button>
 			</Popup>
