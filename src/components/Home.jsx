@@ -23,7 +23,7 @@ const Home = () => {
 					setPicOfTheDay(res.data);
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error(err);
 				});
 		};
 		getPicOfTheDay();
