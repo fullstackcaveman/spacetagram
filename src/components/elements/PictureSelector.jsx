@@ -74,6 +74,7 @@ const PictureSelector = ({ search }) => {
 					label='Search Date'
 				>
 					<DatePicker
+						id='search-field'
 						placeholder='Search Date'
 						className='date-picker'
 						selected={startDate}
