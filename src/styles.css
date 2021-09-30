@@ -540,6 +540,15 @@ body {
   padding: 5px;
 }
 
+.picture-otd .ui.container.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.picture-otd .ui.container.flex-column h1 {
+  margin-bottom: 30px;
+}
+
 .ui.text.container {
   color: white;
 }

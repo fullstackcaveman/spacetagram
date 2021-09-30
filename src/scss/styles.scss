@@ -73,6 +73,21 @@ body {
 	}
 }
 
+.picture-otd {
+	.ui {
+		&.container {
+			&.flex-column {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				h1 {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
 .ui {
 	&.text {
 		&.container {

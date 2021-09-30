@@ -24,7 +24,7 @@ const CustomPotd = ({ match }) => {
 					setPicOfTheDay(res.data);
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error(err);
 				});
 		};
 		getPicOfTheDay();
