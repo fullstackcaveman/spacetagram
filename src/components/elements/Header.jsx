@@ -32,6 +32,7 @@ const Header = ({ isChecked, picDate, picQuality }) => {
 								trigger={
 									<Form inverted>
 										<Form.Field
+											id='hd-check'
 											control={Checkbox}
 											checked={isChecked}
 											label={{ children: 'Display HD Photos' }}
