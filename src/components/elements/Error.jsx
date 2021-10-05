@@ -9,8 +9,9 @@ import {
 import MartianDestroy from '../../images/martian-destroy.png';
 
 const Error = ({ setError }) => {
-	const peekingMartian = document.getElementById('martian');
 	const history = useHistory();
+	const peekingMartian = document.getElementById('martian');
+
 	const tickleMartian = () => {
 		document.getElementById('martianDestroy').click();
 		peekingMartian.classList.add('hidden');
@@ -39,7 +40,7 @@ const Error = ({ setError }) => {
 			}
 		);
 
-		const peekingMartian = document.getElementById('martian');
+		// const peekingMartian = document.getElementById('martian');
 		peekingMartian.classList.remove('hidden');
 		setError(false);
 		return history.push(`/${randomYear}-${randomMonth}-${randomDay}`);
