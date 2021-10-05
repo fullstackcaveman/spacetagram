@@ -18,6 +18,7 @@ const Error = ({ setError }) => {
 	};
 
 	useEffect(() => {
+		document.title = 'Spacetagram | Black Hole';
 		tickleMartian();
 		// eslint-disable-next-line
 	}, []);
