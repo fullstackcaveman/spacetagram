@@ -70,6 +70,9 @@ const PictureOfTheDay = (props) => {
 	// End localStorage helper functions
 
 	useEffect(() => {
+		// Sets page title on mount and when title changes
+		document.title = `Spacetagram | ${title}`;
+
 		// Assigns localStorage key={title} to variable
 		const stickyLikes = localStorage.getItem(title);
 

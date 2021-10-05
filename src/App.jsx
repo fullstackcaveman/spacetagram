@@ -40,7 +40,8 @@ function App() {
 				<Route path='/' component={Home} />
 			</Switch>
 			<Popup
-				trigger={<Image src={martian} id='martian' />}
+				id='martian-popup'
+				trigger={<Image src={martian} id='martian' role='button' />}
 				position='left center'
 				offset={[-10, -25]}
 				hoverable
