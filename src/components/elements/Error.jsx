@@ -19,6 +19,7 @@ const Error = ({ setError }) => {
 
 	useEffect(() => {
 		tickleMartian();
+		// eslint-disable-next-line
 	}, []);
 
 	// Sets random search when user clicks the martian!
