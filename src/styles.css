@@ -683,12 +683,23 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
   margin: 20px;
 }
 
+.martian-destroy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 75vh;
+}
+
 #martian {
   position: fixed;
   bottom: 35%;
   right: -50px;
   transform: rotate(-40deg);
   animation: martian 3s;
+}
+#martian.hidden {
+  display: none;
 }
 
 #root > div > div.App > main > div > div {

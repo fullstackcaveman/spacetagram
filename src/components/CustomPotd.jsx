@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './elements/Header';
 import PictureOfTheDay from '../components/PictureOfTheDay';
+import Error from './elements/Error';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 // To protect personal API key
@@ -13,6 +14,7 @@ const CustomPotd = ({ match }) => {
 	const [loading, setLoading] = useState(true);
 	const [highDef, setHighDef] = useState();
 	const [isChecked, setIsChecked] = useState(false);
+	const [error, setError] = useState(false);
 	const picDate = new Date(`${searchDate}T00:00:00`);
 
 	useEffect(() => {
@@ -24,6 +26,12 @@ const CustomPotd = ({ match }) => {
 					setPicOfTheDay(res.data);
 				})
 				.catch((err) => {
+					if (err.response) {
+						setError(true);
+						console.log(err.response.data);
+						console.log(err.response.status);
+						console.log(err.response.headers);
+					}
 					console.error(err);
 				});
 		};
@@ -64,19 +72,23 @@ const CustomPotd = ({ match }) => {
 	return (
 		<div className='App'>
 			<Header isChecked={isChecked} picQuality={picQuality} picDate={picDate} />
-			<PictureOfTheDay
-				picDate={picDate}
-				mediaType={picOfTheDay.media_type}
-				thumbs={picOfTheDay.thumbnail_url}
-				nextDay={true}
-				hdurl={picOfTheDay.hdurl}
-				title={picOfTheDay.title}
-				image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
-				description={picOfTheDay.explanation}
-				copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
-				date={picOfTheDay.date}
-				loading={loading}
-			/>
+			{error ? (
+				<Error setError={setError} />
+			) : (
+				<PictureOfTheDay
+					picDate={picDate}
+					mediaType={picOfTheDay.media_type}
+					thumbs={picOfTheDay.thumbnail_url}
+					nextDay={true}
+					hdurl={picOfTheDay.hdurl}
+					title={picOfTheDay.title}
+					image={highDef ? picOfTheDay.hdurl : picOfTheDay.url}
+					description={picOfTheDay.explanation}
+					copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
+					date={picOfTheDay.date}
+					loading={loading}
+				/>
+			)}
 		</div>
 	);
 };
