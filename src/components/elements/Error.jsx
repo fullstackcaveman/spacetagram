@@ -48,6 +48,11 @@ const Error = ({ setError }) => {
 		return history.push(`/${randomYear}-${randomMonth}-${randomDay}`);
 	};
 
+	const handleToday = () => {
+		peekingMartian.classList.remove('hidden');
+		history.push('/');
+	};
+
 	return (
 		<div className='martian-destroy'>
 			<Popup
@@ -59,12 +64,22 @@ const Error = ({ setError }) => {
 				size='small'
 				position='top center'
 			>
-				<MartianHeader as='h4'>
-					"Hahaha...I destroyed the photo you're looking for!"
+				<MartianHeader as='h3'>
+					Hahaha...I destroyed the photo you're looking for!
 				</MartianHeader>
-				<Button color='orange' onClick={getRandomDate} fluid>
+				<p>Run to safety:</p>
+				<Button.Group fluid>
+					<Button color='orange' onClick={handleToday}>
+						Today's Pic
+					</Button>
+					<Button.Or />
+					<Button color='orange' onClick={getRandomDate}>
+						Random Pic
+					</Button>
+				</Button.Group>
+				{/* <Button color='orange' onClick={getRandomDate} fluid>
 					Try Another Date
-				</Button>
+				</Button> */}
 			</Popup>
 		</div>
 	);

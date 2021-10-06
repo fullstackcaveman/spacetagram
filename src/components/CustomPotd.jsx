@@ -28,11 +28,10 @@ const CustomPotd = ({ match }) => {
 				.catch((err) => {
 					if (err.response) {
 						setError(true);
-						console.log(err.response.data);
-						console.log(err.response.status);
-						console.log(err.response.headers);
 					}
-					console.error(err);
+					// Cleared console to hide api key
+					console.clear();
+					console.error('Martians are invading!');
 				});
 		};
 		getPicOfTheDay();
