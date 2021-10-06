@@ -294,6 +294,16 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 	}
 }
 
+body > div:nth-child(6) {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+body > div:nth-child(6) > div > h3 {
+	letter-spacing: 0.8px;
+}
+
 #root > div > div.App > main > div > div {
 	display: flex;
 	justify-content: center;
