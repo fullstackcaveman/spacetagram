@@ -49,6 +49,7 @@ const Error = ({ setError }) => {
 	};
 
 	const handleToday = () => {
+		peekingMartian.classList.remove('hidden');
 		history.push('/');
 	};
 
