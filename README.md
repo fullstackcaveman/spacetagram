@@ -22,7 +22,7 @@ Users can see all of the photos that they have "liked" and delete unwanted ones 
 [![Spacetagram Liked Photos](https://res.cloudinary.com/fullstackcaveman/image/upload/v1632078414/Spacetagram/spacetagram-liked-photos_fqnd6s.png)](https://nasa-potd.fullstackcaveman.com/liked-pics)
 
 ## License
-The Spacetagram app is licensed under the terms of the GPL Open Source
+The Spacetagram app is licensed under the terms of the GNU General Public License v3.0
 license and is available for free.
 
 ## Links
