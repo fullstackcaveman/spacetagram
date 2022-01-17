@@ -552,6 +552,9 @@ body {
 .ui.text.container {
   color: white;
 }
+.ui.container .ui.embed {
+  width: 100%;
+}
 .ui.container .like-photo-btn {
   display: flex;
   justify-content: center;
@@ -682,6 +685,13 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content {
 .cards-main-container .saved-cards-container .cards .ui.card {
   margin: 20px;
 }
+.cards-main-container .saved-cards-container .cards .ui.card .extra.center.aligned.content .card-btns {
+  display: flex;
+  justify-content: space-around;
+}
+.cards-main-container .saved-cards-container .cards .ui.card .extra.center.aligned.content .card-btns button {
+  margin: 0;
+}
 
 .martian-destroy {
   display: flex;
@@ -729,7 +739,7 @@ body > div:nth-child(6) > div > h3 {
     right: -50px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 770px) {
   .header-content {
     flex-direction: column;
   }
@@ -750,6 +760,13 @@ body > div:nth-child(6) > div > h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .ui.container {
+    width: 100%;
+  }
+  .ui.container .ui.embed {
+    width: 90%;
   }
 
   .footer-top .photo-copyright {

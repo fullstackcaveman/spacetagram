@@ -84,6 +84,7 @@ const Home = () => {
 					copyright={!picOfTheDay.copyright ? 'Unknown' : picOfTheDay.copyright}
 					date={picOfTheDay.date}
 					loading={loading}
+					video={picOfTheDay.url}
 				/>
 			)}
 		</div>

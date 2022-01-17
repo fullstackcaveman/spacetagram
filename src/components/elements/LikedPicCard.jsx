@@ -21,9 +21,16 @@ const LikedPicCard = ({ likedPic, handleDelete }) => {
 			</Card.Content>
 			<Card.Content extra textAlign='center'>
 				<div className='card-btns'>
-					<Button basic color='green' onClick={handleGoToPhoto}>
-						Go To Photo
-					</Button>
+					{likedPic.mediaType === 'video' ? (
+						<Button basic color='green' onClick={handleGoToPhoto}>
+							Go To Video
+						</Button>
+					) : (
+						<Button basic color='green' onClick={handleGoToPhoto}>
+							Go To Photo
+						</Button>
+					)}
+
 					<Button
 						basic
 						color='red'
