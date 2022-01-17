@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {
 	Button,
 	Container,
+	Embed,
 	Header,
 	Icon,
 	Image,
@@ -28,6 +29,7 @@ const PictureOfTheDay = (props) => {
 		mediaType,
 		thumbs,
 		title,
+		video,
 	} = props;
 
 	const history = useHistory();
@@ -145,7 +147,7 @@ const PictureOfTheDay = (props) => {
 					)}
 					<Container className='picture-section'>
 						{mediaType === 'video' ? (
-							<Image src={thumbs} alt={title} rounded centered />
+							<Embed placeholder={thumbs} url={video} />
 						) : (
 							<Image src={image} alt={title} rounded centered />
 						)}
